@@ -77,7 +77,7 @@ for brand in brands_data:
     create_markdown(brand)
 
 def generate_sitemap():
-    base_url = "https://github.com"
+    base_url = "https://masbroa.github.io/Lokal-Brand-Index/directory/"
     files = os.listdir("directory")
 
     with open("sitemap.xml", "w") as f:
@@ -85,6 +85,9 @@ def generate_sitemap():
         f.write('<urlset xmlns="http://sitemaps.org">\n')
         for file in files:
             if file.endswith(".md"):
+                 # MENGHAPUS ekstensi .md dari URL
+                clean_name = file.replace(".md", "")
+
                 f.write(f'  <url>\n    <loc>{base_url}{file}</loc>\n  </url>\n')
         f.write('</urlset>')
     print("✅ Sitemap.xml updated")
