@@ -3,7 +3,7 @@ import json
 import requests
 
 def fetch_brands_from_api():
-    api_url = "https://produk.dgeomart.com/api/publik/product/list"
+    api_url = "https://produk.dgeomart.com/api/publik/product/list_latest_update"
     try:
         response = requests.get(api_url, timeout=15)
         response.raise_for_status()
