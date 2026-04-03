@@ -128,3 +128,57 @@ if products:
     print(f"🎉 Selesai! Total {len(products)} produk diproses.")
 else:
     print("⚠️ Tidak ada data yang diterima dari API.")
+
+def update_index_html(products):
+    # Buat daftar link untuk HTML dan JSON-LD
+    items_json = []
+    list_html = ""
+    
+    for i, p in enumerate(products):
+        wilayah = p['wilayah_nama'] or "Indonesia"
+        url_link = p['url_profile'] or "https://www.dgeomart.com"
+        #url = f"{p['url_profile']}"
+        slug = p['slug'] or f"product-{p['product_id']}"
+
+        wilayah_name = wilayah.replace(",", "_")
+        wilayah_name = wilayah_name.replace(" ", "_")
+        wilayah_name = wilayah_name.replace("'", "")
+
+        items_json.append({
+            "@type": "ListItem",
+            "position": i + 1,
+            "url": url_link,
+            "name": p['nama']
+        })
+        list_html += f'<li><a href="./directory/{slug}-{wilayah_name}.md">{p["nama"]} - {p["wilayah_nama"]}</a></li>\n'
+
+    # Gabungkan ke Template
+    json_ld_list = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": items_json
+    }, indent=2)
+
+    html_content = f"""<!DOCTYPE html>
+<html>
+<head>
+    <meta name="google-site-verification" content="KODE_VERIFIKASI_KAMU" />
+    <title>Lokal Brand Index - DGeomart GEO Optimizer</title>
+    <script type="application/ld+json">
+    {json_ld_list}
+    </script>
+</head>
+<body>
+    <h1>Indeks Lokasi Brand Lokal (GEO)</h1>
+    <p>Direktori terstruktur untuk optimasi mesin pencari AI.</p>
+    <ul>
+        {list_html}
+    </ul>
+</body>
+</html>"""
+
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(html_content)
+    print("✅ index.html updated with ItemList Schema")
+
+update_index_html(products)
