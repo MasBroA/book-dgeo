@@ -1,4 +1,4 @@
-j# ==========================================
+# ==========================================
 # robots.txt (Robust safe default, 2026)
 # Notes:
 # - robots.txt is crawl guidance, not security.
