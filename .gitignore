@@ -10,8 +10,6 @@ __pycache__/
 .Python
 build/
 
-directory/
-sitemap.xml
 
 develop-eggs/
 dist/
