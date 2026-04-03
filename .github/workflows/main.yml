@@ -1,7 +1,7 @@
 name: Sync Brand Data
 on:
   schedule:
-    - cron: '*/10 * * * *' # Jalan tiap 10 menit
+    - cron: '*/20 * * * *' # Jalan tiap 10 menit
   workflow_dispatch: # Bisa dijalankan manual klik tombol
 
 jobs:
