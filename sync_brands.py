@@ -162,6 +162,18 @@ def update_index_html(products):
     html_content = f"""<!DOCTYPE html>
 <html lang="id">
 <head>
+    <!-- Meta Dasar -->
+    <meta name="description" content="Indeks Brand Lokal Indonesia untuk optimasi GEO dan penemuan produk UMKM.">
+    <link rel="canonical" href="https://github.io">
+
+    <!-- Open Graph (Sosial Media) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lokal Brand Index - DGeomart">
+    <meta property="og:description" content="Kumpulan direktori brand lokal dari berbagai wilayah di Indonesia.">
+    <meta property="og:url" content="https://github.io">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://www.dgeomart.com/ecom/images/logo/logo2.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="mkts7AhE-ySL6g37ibn9s4Am0HWwEzPyo8cZ2UA_Rdc" />
@@ -188,8 +200,10 @@ def update_index_html(products):
     </script>
 </head>
 <body>
-    <h1>Indeks Lokasi Brand Lokal (GEO)</h1>
-    <ul>{list_html}</ul>
+    <main>
+        <h1>Indeks Lokasi Brand Lokal (GEO)</h1>
+        <ul>{list_html}</ul>
+    </main>
 </body>
 </html>"""
 
