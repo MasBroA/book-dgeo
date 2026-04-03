@@ -162,7 +162,7 @@ def update_index_html(products):
     html_content = f"""<!DOCTYPE html>
 <html>
 <head>
-    <meta name="google-site-verification" content="KODE_VERIFIKASI_KAMU" />
+    <meta name="google-site-verification" content="mkts7AhE-ySL6g37ibn9s4Am0HWwEzPyo8cZ2UA_Rdc" />
     <title>Lokal Brand Index - DGeomart GEO Optimizer</title>
     <script type="application/ld+json">
     {json_ld_list}
