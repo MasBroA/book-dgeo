@@ -17,12 +17,25 @@ jobs:
         run: pip install requests
       - name: Run Sync Script
         run: python sync_brands.py
-      - name: Commit & Push changes
+      - name: Commit and Push changes
         run: |
           git config --global user.name 'Agus Romadi'
           git config --global user.email 'agus@agusromadi.com'
+          
+          # 1. Ambil update terbaru dari server tanpa menggabungkan (fetch)
+          git fetch origin main
+          
+          # 2. Paksa sinkronisasi dengan server (reset ke kondisi server)
+          git reset --hard origin/main
+          
+          # 3. Masukkan perubahan baru dari script kamu
+          # (Pastikan script update brand index sudah jalan sebelum tahap ini)
           git add .
+          
+          # 4. Commit jika ada perubahan
           git commit -m "Auto-update brand index" || exit 0
-          git pull origin main --rebase
+          
+          # 5. Push langsung ke main
           git push origin main
+          
 
