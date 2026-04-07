@@ -99,6 +99,13 @@ last_updated: "{product.get('updated_time')}"
     
     with open(filename, "w", encoding="utf-8") as f:
         f.write(content)
+
+    filename = f"{directory}/{slug}-{wilayah_name}/index.md"
+
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(content)
+
+
     print(f"✅ Berhasil membuat: {filename}")
 
 def generate_sitemap():
