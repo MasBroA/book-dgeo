@@ -3,6 +3,7 @@ import json
 import requests
 
 from datetime import date
+from datetime import datetime
 
 def fetch_brands_from_api():
     api_url = "https://produk.dgeomart.com/api/publik/product/list_latest_update"
@@ -121,6 +122,7 @@ def generate_sitemap():
     base_url = "https://masbroa.github.io/Lokal-Brand-Index/directory/"
     files = os.listdir("directory")
     today = date.today()
+    now = datetime.now()
 
     with open("sitemap.xml", "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
@@ -133,7 +135,7 @@ def generate_sitemap():
                  # MENGHAPUS ekstensi .md dari URL
                 clean_name = file.replace(".md", "")
 
-                f.write(f'  <url>\n    <loc>{base_url}{clean_name}</loc>\n    <lastmod>{today}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+                f.write(f'  <url>\n    <loc>{base_url}{clean_name}</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
         f.write('</urlset>')
     print("✅ Sitemap.xml updated")
 
