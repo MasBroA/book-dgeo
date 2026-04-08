@@ -124,7 +124,10 @@ def generate_sitemap():
 
     with open("sitemap.xml", "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        # PERBAIKAN: Namespace harus lengkap seperti di bawah ini
         f.write('<urlset xmlns="http://sitemaps.org">\n')
+
+        #f.write('<urlset xmlns="http://sitemaps.org">\n')
         for file in files:
             if file.endswith(".md"):
                  # MENGHAPUS ekstensi .md dari URL
