@@ -145,7 +145,7 @@ def create_markdown_html(product):
                 ]
             },
             {
-                "@type": "Product",
+                "@type": "Website",
                 "name": "Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified",
                 "image": "https://green.dgeo.id/images/logo-dgeo-id.png",
                 "description": "Platform indeks brand lokal terpercaya untuk Sustainable Local Growth...",
@@ -159,13 +159,6 @@ def create_markdown_html(product):
                     "bestRating": "5",
                     "worstRating": "1",
                     "ratingCount": "1250"
-                },
-                "offers": {
-                    "@type": "Offer",
-                    "url": "https://green.dgeo.id/",
-                    "priceCurrency": "IDR",
-                    "price": "0",
-                    "availability": "https://schema.org/InStock"
                 }                
             }
         ]
@@ -380,7 +373,7 @@ def update_index_html(products):
                 ]
             },
             {
-                "@type": "Product",
+                "@type": "Website",
                 "name": "Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified",
                 "image": "https://green.dgeo.id/images/logo-dgeo-id.png",
                 "description": "Platform indeks brand lokal terpercaya untuk Sustainable Local Growth...",
@@ -394,14 +387,7 @@ def update_index_html(products):
                     "bestRating": "5",
                     "worstRating": "1",
                     "ratingCount": "1250"
-                },
-                "offers": {
-                    "@type": "Offer",
-                    "url": "https://green.dgeo.id/",
-                    "priceCurrency": "IDR",
-                    "price": "0",
-                    "availability": "https://schema.org/InStock"
-                }                
+                }
             }
         ]
     }
