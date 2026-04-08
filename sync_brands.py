@@ -351,7 +351,7 @@ def update_index_html(products):
             "url": url_link,
             "name": p['nama']
         })
-        list_html += f'<li><a href="./directory/{slug}-{wilayah_name}.md">{p["nama"]} - {p["wilayah_nama"]}</a><p>{p["deskripsi"]}</p></li>\n'
+        list_html += f'<li><a href="./directory/{slug}-{wilayah_name}/">{p["nama"]} - {p["wilayah_nama"]}</a><p>{p["deskripsi"]}</p></li>\n'
 
     # Gabungkan ke Template
     json_ld_list = json.dumps({
