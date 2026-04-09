@@ -28,7 +28,7 @@ def create_markdown(product):
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = product.get('url_profile') or "https://green.dgeo.id"
+    url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
     contact_nama = product.get('contact_nama') or ""
     contact_telp = product.get('contact_telp') or ""
     contact_email = product.get('contact_email') or ""
@@ -126,7 +126,7 @@ def create_index_html(product):
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = product.get('url_profile') or "https://green.dgeo.id"
+    url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
     keyword = product.get('keyword') or ""
 
     # Gunakan slug dari API untuk nama file
@@ -252,6 +252,11 @@ def create_index_html(product):
 <h3>Alamat: {product.get('alamat')}</h3>
 <h4>last_updated: "{product.get('updated_time')}"</h4>
 </center>
+        <div class="rating-badge">
+            <span class="stars">★★★★★</span> 
+            <strong>4.9/5</strong> 
+            <a href="https://green.dgeo.id/testimoni"><small style="margin-left: 10px; color: #666;">(1.250+ Ulasan Terverifikasi)</small></a>
+        </div>
         </div>
         <br>
         <center>
@@ -280,7 +285,6 @@ def create_index_html(product):
 
 <p>Dapatkan informasi lainnya di DGeo Green - https://green.dgeo.id</p> 
 
-<p>{product.get('qr_link')}</p>
         </section>
     </main>
     <footer>
@@ -332,7 +336,7 @@ def create_faq_html(product):
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = product.get('url_profile') or "https://green.dgeo.id"
+    url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
     keyword = product.get('keyword') or ""
     faq = ""
     # Gunakan slug dari API untuk nama file
@@ -531,7 +535,7 @@ def create_testimoni_html(product):
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = product.get('url_profile') or "https://green.dgeo.id"
+    url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
     keyword = product.get('keyword') or ""
     testimoni = ""
     # Gunakan slug dari API untuk nama file
@@ -731,7 +735,7 @@ def create_artikel_html(product):
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = product.get('url_profile') or "https://green.dgeo.id"
+    url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
     keyword = product.get('keyword') or ""
     artikel = ""
 
@@ -930,7 +934,7 @@ def create_galeri_html(product):
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = product.get('url_profile') or "https://green.dgeo.id"
+    url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
     keyword = product.get('keyword') or ""
     galeri = ""
     
@@ -1288,7 +1292,7 @@ def update_index_html(products):
     for i, p in enumerate(products):
         wilayah = p['wilayah_nama'] or "Indonesia"
 
-        url_link = p['url_profile'] or "https://green.dgeo.id"
+        url_link = "https://green.dgeo.id" #p['url_profile'] or "https://green.dgeo.id"
         #url = f"{p['url_profile']}"
         slug = p['slug'] or f"product-{p['product_id']}"
 
