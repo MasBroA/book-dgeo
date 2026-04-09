@@ -68,15 +68,6 @@ Keripik keladi pelangi telah memperoleh sertifikasi halal dari MUI, untuk inform
 - Longitude: 131.2700168
 
 ### Tentang produk/brand ini
-Keripik Keladi Pelangi, salah produsen keripik keladi di Sorong, Raja Ampat, Papua Barat yang telah menerapkan green energy (energi bersih atau energi hijau) dalam proses produsen. 
-
-Selain itu keripik keladi pelangi salah satu UMKM di sorong, Raja Ampat Papua barat, yang telah memanfaatkan teknologi digital e-commerce yang telah menggunakan teknologi AI marketplace.
-
-Sehingga para konsumen, distributor, reseller dapat melakukan komunikasi dengan robot AI sebagai customer service Keripik Keladi Pelangi.
-
-
-Keripik keladi pelangi telah memperoleh sertifikasi halal dari MUI,
-
 untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikasi produk halal dari produk Keripik Keladi Asin 'Pelangi'
 
 

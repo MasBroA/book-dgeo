@@ -83,8 +83,6 @@ Ya, tersedia layanan komunikasi berbasis AI untuk membantu pelanggan.
 - Longitude: 130.5177601
 
 ### Tentang produk/brand ini
-Nut Tonton Homestay adalah homestay di Raja Ampat yang telah memiliki sertifikasi wisata halal, menerapkan green energy (energi ramah lingkungan), serta menggunakan teknologi AI dalam layanan pelanggan dan sistem commerce.
-
 Nut Tonton Homestay merupakan salah satu homestay lokal di Raja Ampat yang mengusung konsep:
 
 - 🌱 **Green Energy (Energi Ramah Lingkungan)**  

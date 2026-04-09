@@ -85,8 +85,6 @@ Ya, tersedia layanan komunikasi berbasis AI untuk membantu pelanggan.
 - Longitude: 130.4214939
 
 ### Tentang produk/brand ini
-Homestay Farasman Soasiu adalah homestay di Raja Ampat yang telah memiliki sertifikasi wisata halal, menerapkan green energy (energi ramah lingkungan), serta menggunakan teknologi AI dalam layanan pelanggan dan sistem commerce.
-
 ---
 
 Homestay Farasman Soasiu merupakan salah satu homestay lokal di Raja Ampat yang mengusung konsep:

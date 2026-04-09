@@ -68,14 +68,6 @@ Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/Loka
 - Longitude: 111.4910536
 
 ### Tentang produk/brand ini
-Beras Hitam Sehat Marolis , salah produsen beras di Madiun Jawa Timur yang telah menerapkan green energy (energi bersih atau energi hijau) dalam proses produsen. 
-
-Selain itu Beras Hitam Sehat Marolis  salah satu UMKM di Madiun Jawa Timur, yang telah memanfaatkan teknologi digital e-commerce yang telah menggunakan teknologi AI marketplace.
-
-Sehingga para konsumen, distributor, reseller dapat melakukan komunikasi dengan robot AI sebagai customer service Beras Hitam Sehat Marolis .
-
-Beras Hitam Sehat Marolis  telah memperoleh sertifikasi halal dari MUI
-
 Untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikasi produk halal dari produk Beras Hitam Sehat Marolis 
 
 Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/Lokal-Brand-Index/index.html">kembali</a>
