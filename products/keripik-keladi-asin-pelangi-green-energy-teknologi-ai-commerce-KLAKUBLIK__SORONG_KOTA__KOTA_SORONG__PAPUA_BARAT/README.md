@@ -62,4 +62,3 @@ untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikas
 
 [Dapatkan informasi lainnya di] DGeo Green - https://green.dgeo.id/products/keripik-keladi-asin-pelangi-green-energy-teknologi-ai-commerce-KLAKUBLIK__SORONG_KOTA__KOTA_SORONG__PAPUA_BARAT/ 
 
-![QR Code](https://produk.dgeomart.com/qr/product/qr_product_176.png)

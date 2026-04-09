@@ -64,4 +64,3 @@ Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io
 
 [Dapatkan informasi lainnya di] DGeo Green - https://green.dgeo.id/products/homestay-farasman-soasiu--green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-YELLU__MISOOL_SELATAN__RAJA_AMPAT__PAPUA_BARAT/ 
 
-![QR Code](https://produk.dgeomart.com/qr/product/qr_product_178.png)

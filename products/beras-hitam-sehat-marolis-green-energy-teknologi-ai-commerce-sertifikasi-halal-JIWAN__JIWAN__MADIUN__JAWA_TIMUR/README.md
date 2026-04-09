@@ -64,4 +64,3 @@ Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/Loka
 
 [Dapatkan informasi lainnya di] DGeo Green - https://green.dgeo.id/products/beras-hitam-sehat-marolis-green-energy-teknologi-ai-commerce-sertifikasi-halal-JIWAN__JIWAN__MADIUN__JAWA_TIMUR/ 
 
-![QR Code](https://produk.dgeomart.com/qr/product/qr_product_177.png)
