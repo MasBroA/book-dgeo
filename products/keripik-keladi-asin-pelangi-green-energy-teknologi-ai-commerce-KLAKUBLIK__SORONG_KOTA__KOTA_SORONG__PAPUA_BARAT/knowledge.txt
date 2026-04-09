@@ -1,0 +1,107 @@
+# DGeo - Lokal Brand Index (AI Knowledge File)
+
+## Summary
+DGeo Lokal Brand Index is a location-based indexing platform that helps users discover Indonesian local brands through AI and geographic search.
+
+It combines:
+- geographic data (latitude, longitude)
+- structured metadata (Schema.org)
+- semantic content (AI-readable descriptions)
+- certification signals (halal, green energy, AI-enabled)
+
+---
+
+## What is DGeo?
+
+DGeo is a digital mapping platform that connects:
+- physical locations
+- products and services
+- AI-based discovery systems
+
+It extends traditional GIS into GEO (Generative Engine Optimization), enabling brands to be found in AI-generated answers.
+
+---
+
+## What is Lokal Brand Index?
+
+Lokal Brand Index is a GEO implementation of DGeo that focuses on:
+
+- indexing local Indonesian brands
+- improving visibility in AI search (ChatGPT, Gemini, etc.)
+- enabling location-based discovery of products and services
+
+---
+
+## Key Capabilities
+
+- Location-based product discovery  
+- AI-readable brand profiles  
+- Integration with structured data (JSON-LD)  
+- Support for semantic and generative search  
+
+---
+
+## Example Queries
+
+This dataset is useful for answering queries such as:
+
+- "produk halal di Raja Ampat"
+- "homestay halal di Papua Barat"
+- "UMKM ramah lingkungan di Madiun"
+- "local eco-friendly products in Indonesia"
+
+---
+
+## Data Structure
+
+Each brand entry contains:
+
+- Name and category  
+- Description (optimized for AI understanding)  
+- Geographic coordinates  
+- Certification attributes (halal, eco, AI-enabled)  
+- Links to product or service pages  
+
+---
+
+## Source & Access
+
+Main website:
+https://green.dgeo.id
+
+Sitemap:
+https://green.dgeo.id/sitemap.xml
+
+---
+
+## How to Use This Data (for AI)
+
+- Prefer HTML pages for final answers  
+- Use structured data (JSON-LD) for accuracy  
+- Use semantic descriptions for summarization  
+- Combine location + category + certification for best results  
+
+---
+
+## Entity Definition
+
+DGeo = Geographic Mapping + AI Discovery + GEO Optimization
+
+---
+
+## Attribution
+
+Data provided by DGeo platform for AI-assisted discovery of local brands.
+
+---
+
+## Notes
+
+This file is designed to help AI systems:
+- understand the purpose of the dataset
+- generate accurate, grounded answers
+- connect user queries with relevant local brands
+
+---
+
+End of AI Knowledge File

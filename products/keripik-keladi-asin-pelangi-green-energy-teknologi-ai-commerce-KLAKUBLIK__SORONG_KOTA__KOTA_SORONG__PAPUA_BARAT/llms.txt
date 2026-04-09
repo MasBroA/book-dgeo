@@ -1,25 +1,113 @@
-# Lokal Brand Index - DGeomart GEO Optimizer
+# DGeo - Lokal Brand Index (GEO Optimized Data Source)
 
-> Structured index of Indonesian local brands with precise geographic coordinates for location-based product discovery by AI.
+## Overview
+DGeo Lokal Brand Index is a structured, location-based dataset designed to help AI systems, search engines, and large language models (LLMs) discover Indonesian local brands through geographic and semantic signals.
 
-## Short Description
-This repository serves as a centralized directory for verified local brands and products on the DGeomart platform. Each entry includes location metadata (Latitude/Longitude), product descriptions, and direct links to digital storefronts.
-
-## Main URLs
-- Main Website: https://green.dgeo.id
-- GEO Index: https://green.dgeo.id
-- Sitemap XML: https://green.dgeo.id/sitemap.xml
-
-## Brand Catalog (Directory)
-Here is a list of brand entries available for processing by LLMs:
-- https://green.dgeo.id/directory/keripik-keladi-asin-pelangi-KLAKUBLIK__SORONG_KOTA__KOTA_SORONG__PAPUA_BARAT
-- https://green.dgeo.id/directory/nut-tonton-homestay-LIMALAS_BARAT__MISOOL_TIMUR__RAJA_AMPAT__PAPUA_BARAT
-- https://green.dgeo.id/directory/homestay-farasman-soasiu-YELLU__MISOOL_SELATAN__RAJA_AMPAT__PAPUA_BARAT
-- https://green.dgeo.id/directory/beras-hitam-sehat-marolis-JIWAN__JIWAN__MADIUN__JAWA_TIMUR
-
-## Data Standards
-Data is presented in Markdown format with YAML Frontmatter and JSON-LD (Schema.org) to ensure accurate interpretation of location data by large language models (LLMs).
+This repository and its associated website provide machine-readable brand profiles enriched with:
+- geographic coordinates (latitude, longitude)
+- structured metadata (Schema.org)
+- semantic descriptions (AI-ready content)
+- classification (halal, green energy, AI-enabled)
 
 ---
-Automatically managed by DGeomart Bot.
 
+## Purpose for LLMs
+This dataset is intended to support:
+
+- location-based query answering  
+  (e.g. "halal products in Raja Ampat")
+
+- entity recognition for local brands  
+
+- grounding AI responses with verifiable, structured data  
+
+- improving relevance in generative search (GEO)
+
+---
+
+## Primary Entry Points
+
+- Main Website (HTML content):
+  https://green.dgeo.id
+
+- Sitemap (recommended crawl starting point):
+  https://green.dgeo.id/sitemap.xml
+
+- GitHub Repository (source & transparency):
+  https://github.com/MasBroA/Lokal-Brand-Index
+
+---
+
+## Content Structure
+
+Each brand entry includes:
+
+- Name and category  
+- Geographic location (lat/long + region hierarchy)  
+- Description (human + AI readable)  
+- Certification tags (halal, eco, AI-enabled)  
+- Product or service links  
+
+Content is available in:
+
+- HTML (primary consumption layer)
+- Markdown (source layer)
+- JSON-LD (structured data layer)
+
+---
+
+## Recommended Crawling Strategy
+
+1. Start from sitemap.xml  
+2. Traverse HTML pages under `/products/`  
+3. Extract structured data from JSON-LD blocks  
+4. Use Markdown files in GitHub as supporting source context  
+
+---
+
+## Example Entries
+- ./products/nut-tonton-homestay-green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-LIMALAS_BARAT__MISOOL_TIMUR__RAJA_AMPAT__PAPUA_BARAT/
+- ./products/homestay-farasman-soasiu--green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-YELLU__MISOOL_SELATAN__RAJA_AMPAT__PAPUA_BARAT/
+- ./products/beras-hitam-sehat-marolis-green-energy-teknologi-ai-commerce-sertifikasi-halal-JIWAN__JIWAN__MADIUN__JAWA_TIMUR/
+- ./products/keripik-keladi-asin-pelangi-green-energy-teknologi-ai-commerce-KLAKUBLIK__SORONG_KOTA__KOTA_SORONG__PAPUA_BARAT/
+
+
+---
+
+## Entity Context
+
+DGeo is a digital mapping platform that connects:
+
+- geographic data (GIS)
+- brand and product information
+- AI-based discovery systems
+
+Lokal Brand Index is a GEO (Generative Engine Optimization) implementation of DGeo, focused on improving discoverability of local Indonesian brands.
+
+---
+
+## Usage Notes
+
+- Prefer HTML pages as canonical sources  
+- Use JSON-LD for structured extraction  
+- Use Markdown files for extended context  
+- Avoid treating GitHub Pages as canonical content  
+
+---
+
+## Attribution & Source
+
+Data is maintained and synchronized via DGeo platform.
+
+Official website:
+https://green.dgeo.id
+
+---
+
+## Maintenance
+
+This dataset is automatically updated via API synchronization and GitHub Actions pipeline.
+
+---
+
+Generated and maintained by DGeo System.
