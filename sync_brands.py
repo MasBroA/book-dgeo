@@ -3,9 +3,8 @@ import json
 import requests
 import shutil
 
-from datetime import date
-from datetime import datetime
 from pathlib import Path
+from datetime import datetime, timezone, date
 
 def fetch_brands_from_api():
     api_url = "https://produk.dgeomart.com/api/publik/product/list_latest_update"
@@ -1159,18 +1158,19 @@ def create_sitemap_html(product):
     os.makedirs(folder_path, exist_ok=True)
 
     today = date.today()
-    now = datetime.now()
+    now = datetime.now(timezone.utc)
+    lastmod = now.isoformat()
 
     filename = f"{folder_path}/sitemap.xml"
     with open(filename, "w") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n')
         # PERBAIKAN: Namespace harus lengkap seperti di bawah ini
         f.write('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
-        f.write(f'  <url>\n    <loc>{base_url}{folder_path}/index.html</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
-        f.write(f'  <url>\n    <loc>{base_url}{folder_path}/faq.html</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
-        f.write(f'  <url>\n    <loc>{base_url}{folder_path}/artikel.html</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
-        f.write(f'  <url>\n    <loc>{base_url}{folder_path}/testimoni.html</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
-        f.write(f'  <url>\n    <loc>{base_url}{folder_path}/galeri.html</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+        f.write(f'  <url>\n    <loc>{base_url}{folder_path}/index.html</loc>\n    <lastmod>{lastmod}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+        f.write(f'  <url>\n    <loc>{base_url}{folder_path}/faq.html</loc>\n    <lastmod>{lastmod}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+        f.write(f'  <url>\n    <loc>{base_url}{folder_path}/artikel.html</loc>\n    <lastmod>{lastmod}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+        f.write(f'  <url>\n    <loc>{base_url}{folder_path}/testimoni.html</loc>\n    <lastmod>{lastmod}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+        f.write(f'  <url>\n    <loc>{base_url}{folder_path}/galeri.html</loc>\n    <lastmod>{lastmod}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
         f.write('</urlset>')
     print("✅ Sitemap.xml Product updated")
     
@@ -1179,7 +1179,8 @@ def generate_sitemap():
     base_url = "https://green.dgeo.id/products/"
     files = os.listdir("products")
     today = date.today()
-    now = datetime.now()
+    now = datetime.now(timezone.utc)
+    lastmod = now.isoformat()
 
 
     with open("sitemap.xml", "w") as f:
@@ -1194,11 +1195,11 @@ def generate_sitemap():
             if path.is_dir():
                  # MENGHAPUS ekstensi .md dari URL
                 clean_name = file.replace(".md", "")
-                f.write(f'  <url>\n    <loc>{base_url}{clean_name}</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
-                f.write(f'  <url>\n    <loc>{base_url}{clean_name}/faq.html</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
-                f.write(f'  <url>\n    <loc>{base_url}{clean_name}/testimoni.html</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
-                f.write(f'  <url>\n    <loc>{base_url}{clean_name}/artikel.html</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
-                f.write(f'  <url>\n    <loc>{base_url}{clean_name}/galeri.html</loc>\n    <lastmod>{now}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+                f.write(f'  <url>\n    <loc>{base_url}{clean_name}</loc>\n    <lastmod>{lastmod}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+                f.write(f'  <url>\n    <loc>{base_url}{clean_name}/faq.html</loc>\n    <lastmod>{lastmod}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+                f.write(f'  <url>\n    <loc>{base_url}{clean_name}/testimoni.html</loc>\n    <lastmod>{lastmod}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+                f.write(f'  <url>\n    <loc>{base_url}{clean_name}/artikel.html</loc>\n    <lastmod>{lastmod}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
+                f.write(f'  <url>\n    <loc>{base_url}{clean_name}/galeri.html</loc>\n    <lastmod>{lastmod}</lastmod>\n   <priority>0.8</priority>\n   </url>\n')
         f.write('</urlset>')
     print("✅ Sitemap.xml updated")
 
