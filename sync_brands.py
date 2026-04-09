@@ -111,8 +111,6 @@ last_updated: "{product.get('updated_time')}"
 - Longitude: {product.get('longitude')}
 
 ### Tentang produk/brand ini
-{deskripsi}
-
 {catatan}
 
 
