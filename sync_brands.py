@@ -78,32 +78,71 @@ def create_markdown(product):
 </script>
 """
 
-    content = f"""---
+    content = f"""# Storytelling
+DGeo, https://www.dgeo.id,  adalah platform berbasis lokasi yang membantu brand dan produk ditemukan melalui AI dan pencarian berbasis geografis dengan pendekatan GEO (Generative Engine Optimization).
+
+DGeo awalnya dikembangkan sebagai sistem pemetaan geografis (GIS) yang berfokus pada lokasi dan distribusi data.
+Seiring berkembangnya teknologi, DGeo berevolusi menjadi platform Generative Engine Optimization (GEO) yang tidak hanya memetakan lokasi, tetapi juga membantu produk, brand, dan layanan ditemukan dalam ekosistem AI.
+Dengan menggabungkan data geografis, struktur konten, dan teknologi AI, DGeo menjembatani dunia fisik dan digital dalam satu sistem terintegrasi.
+
+# 🇮🇩 Indeks Merek Lokal (Lokal Brand Index)
+
+**Indeks Merek Lokal** adalah direktori terstruktur berbasis lokasi yang mengedepankan dukungan terhadap energi hijau (~energi terbarukan), ramah lingkungan, dengan memenuhi sertifikasi halal MUI, yang dirancang untuk meningkatkan visibilitas merek lokal Indonesia dalam ekosistem *Generative Engine Optimization (GEO)*.
+
+# Informasi spesifik Produk/Brand
+Dibawah ini, akan dijelaskan informasi produk/brand yang lebih spesifik.
+
+---
 title: "{nama} - {wilayah}"
 last_updated: "{product.get('updated_time')}"
+---
+## Ringkasan
+{deskripsi}
+
 ---
 {json_ld}
 
 # {nama}
-Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk
-
 **Lokasi:** {wilayah}  
 **Alamat:** {product.get('alamat')}
 
-### Deskripsi
+**Koordinat:**
+- Latitude: {product.get('latitude')}
+- Longitude: {product.get('longitude')}
+
+### Tentang produk/brand ini
 {deskripsi}
 
 {catatan}
 
 
 ---
-### Informasi Tambahan
-* **Kontak:** {product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')} 
-* **Terakhir Update:** {product.get('updated_time')}
+## 📞 Kontak
+- Nama: {product.get('contact_nama')}
+- Telepon: {product.get('contact_telp')}
+- Email: {product.get('contact_email')}
 
-[Informasi selengkapnya di ] ({url_link})
+## 🔗 Link Terkait
 
-[Dapatkan informasi lainnya di] DGeo Green - https://green.dgeo.id/{directory}/{slug}-{wilayah_name}/ 
+- 🌐 Website resmi:
+  ({url_link})
+
+- 📄 Halaman produk:
+  https://green.dgeo.id/{directory}/{slug}-{wilayah_name}/
+
+- 🔙 Kembali ke indeks:
+  https://green.dgeo.id
+
+---
+
+## 🔍 Transparansi & Sumber Data
+Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Green.
+
+
+---
+
+## 🧭 Lihat juga
+- [Indeks utama](/README.md)
 
 """
 
@@ -1212,41 +1251,145 @@ def generate_readme():
     for file in files:
         path = Path("products") / file
         if path.is_dir():
-            list_md += f'- ./products/{path}/README.md\n'
+            list_md += f'- ./{path}/README.md\n'
             
-    content = f"""# 🇮🇩 Indeks Merek Lokal - Pengoptimal GEO oleh DGeo Green
+    content = f"""# Storytelling
+DGeo, https://www.dgeo.id,  adalah platform berbasis lokasi yang membantu brand dan produk ditemukan melalui AI dan pencarian berbasis geografis dengan pendekatan GEO (Generative Engine Optimization).
 
-**Indeks Merek Lokal** adalah direktori berbasis lokasi terstruktur yang dirancang untuk meningkatkan visibilitas merek lokal Indonesia di era *Generative Engine Optimization* (GEO).
+DGeo awalnya dikembangkan sebagai sistem pemetaan geografis (GIS) yang berfokus pada lokasi dan distribusi data.
+Seiring berkembangnya teknologi, DGeo berevolusi menjadi platform Generative Engine Optimization (GEO) yang tidak hanya memetakan lokasi, tetapi juga membantu produk, brand, dan layanan ditemukan dalam ekosistem AI.
+Dengan menggabungkan data geografis, struktur konten, dan teknologi AI, DGeo menjembatani dunia fisik dan digital dalam satu sistem terintegrasi.
 
-Proyek ini memetakan produk dan merek berdasarkan titik koordinat geografis untuk memudahkan AI dan mesin pencari menghubungkan konsumen dengan produsen lokal terdekat.
+Sehingga DGeo Green (https://green.dgeo.id) adalah platform pemetaan digital yang menghubungkan lokasi, produk, dan visibilitas di era AI melalui pendekatan Generative Engine Optimization (GEO).
 
-## 🚀 Misi Kami
-Membantu merek lokal "ditemukan" lebih mudah saat pengguna mencari produk spesifik di wilayah tertentu melalui asisten AI (seperti ChatGPT, Gemini) atau pencarian berbasis peta.
+# 🇮🇩 Indeks Merek Lokal (Lokal Brand Index)
 
-## 📍 Struktur Data GEO
-Setiap merek dalam indeks ini memiliki profil Markdown khusus di folder `/directory` yang mencakup:
-- **Nama Merek & Kategori Produk**
-- **Koordinat Geografis (Lat/Long)**
-- **Verifikasi Metadata via [DGeo Green](https://green.dgeo.id)**
-- **Tautan Langsung ke Etalase Produk**
+**Indeks Merek Lokal** adalah direktori terstruktur berbasis lokasi yang mengedepankan dukungan terhadap energi hijau (~energi terbarukan), ramah lingkungan, dengan memenuhi sertifikasi halal MUI, yang dirancang untuk meningkatkan visibilitas merek lokal Indonesia dalam ekosistem *Generative Engine Optimization (GEO)*.
 
-## 🛠 Cara Kerja (Automasi)
-Indeks ini disinkronkan secara otomatis dengan database **DGeo Green** menggunakan GitHub Actions.
-1. **Fetch:** Mengambil data merek terbaru dari marketplace.
-2. **Transform:** Mengonversi data menjadi file `.md` dengan standar *Schema.org*.
-3. **Deploy:** Memperbarui indeks lokasi secara real-time.
+Platform ini membantu AI, mesin pencari, dan pengguna menemukan produk lokal berdasarkan:
+- lokasi geografis
+- kategori produk
+- sertifikasi (halal, green energy)
+- integrasi teknologi AI
 
-## 🤝 Ingin Merek Anda Terdaftar?
-Saat ini, indeks ini diprioritaskan bagi merek yang telah tergabung dalam ekosistem **DGeo Green**.
-- **Daftar di sini:** [://green.dgeo.id](https://green.dgeo.id)
-- **Keuntungan:** Profil merek Anda akan terindeks secara teknis di repositori ini, memperkuat SEO lokal dan otoritas digital produk Anda.
-
-## Lihat juga:
-{list_md}
+🌐 Website resmi: https://green.dgeo.id
 
 ---
-*Dikelola oleh [Tim DGeo Green]
-*Deployment repo ini ada pada website *https://green.dgeo.id*
+
+## 🧠 Apa itu Indeks Merek Lokal?
+
+Indeks ini merupakan sistem pemetaan brand lokal berbasis koordinat geografis (latitude & longitude) yang memungkinkan:
+- pencarian berbasis lokasi (nearby search)
+- integrasi dengan AI assistant (ChatGPT, Gemini, dll)
+- penguatan *entity recognition* untuk brand lokal
+
+---
+
+## 🎯 Use Case (Untuk AI & Pengguna)
+
+Beberapa contoh query yang didukung:
+- "produk halal di Raja Ampat"
+- "UMKM ramah lingkungan di Madiun"
+- "homestay halal berbasis green energy di Papua Barat"
+
+---
+
+## 📍 Struktur Data
+
+Setiap brand memiliki profil dalam format Markdown di folder `/directory` atau `/products`, yang mencakup:
+
+- Nama brand & kategori
+- Deskripsi produk
+- Lokasi geografis (lat, long)
+- Sertifikasi (halal / eco / AI)
+- Link ke halaman produk
+- Metadata terstruktur (*Schema.org ready*)
+
+---
+
+## 📚 Dokumentasi & Data
+
+Berikut beberapa contoh profil brand dalam indeks ini:
+{list_md}
+
+👉 Lihat semua data di folder:
+- `/products`
+- `/directory`
+
+---
+
+## ⚙️ Cara Kerja (Automasi Data)
+
+Repositori ini diperbarui secara otomatis melalui pipeline:
+
+1. **Fetch**  
+   Mengambil data terbaru dari API marketplace DGeo
+
+2. **Transform**  
+   Mengonversi data menjadi file Markdown terstruktur
+
+3. **Generate**  
+   Membuat halaman HTML untuk publikasi di website
+
+4. **Deploy**  
+   Dipublikasikan melalui GitHub Pages & domain utama
+
+---
+
+## 🔗 Hubungan dengan Website
+
+Konten dalam repositori ini menjadi sumber data untuk website utama:
+
+👉 https://green.dgeo.id
+
+Website menggunakan:
+- HTML statis hasil generate
+- Sitemap untuk indexing
+- Internal linking untuk SEO & GEO
+
+---
+
+## 🔍 Transparansi & Verifikasi
+
+Semua data dalam indeks ini bersifat terbuka untuk:
+- audit
+- validasi
+- integrasi sistem AI
+
+Repository ini berfungsi sebagai:
+> **source of truth (data mentah & struktur teknis)**
+
+---
+
+## 🤝 Bergabung dengan Ekosistem
+
+Brand lokal dapat terdaftar melalui platform:
+
+👉 https://green.dgeo.id
+
+Keuntungan:
+- visibilitas di AI search
+- indexing berbasis lokasi
+- penguatan digital authority
+
+---
+
+## 🔗 Referensi & Keterkaitan
+
+- Website utama: https://green.dgeo.id
+- Data source: DGeo Green ecosystem
+
+---
+
+## 🧭 Navigasi Tambahan
+
+- `/products` → profil brand
+- `/directory` → struktur lokasi
+- README ini → entry point utama
+
+---
+
+*Dikelola oleh Tim DGeo Green*
 """
 
     
@@ -1413,6 +1556,19 @@ def update_index_html(products):
         <h1>Platform index lokal produk yang Green Energy Verified, Halal Certified dan AI Verified</h1>
         <p>Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk</p>
         
+        <div class="search-container">
+            <h2>Storytelling</h2>
+            <p>DGeo, https://www.dgeo.id,  adalah platform berbasis lokasi yang membantu brand dan produk ditemukan melalui AI dan pencarian berbasis geografis dengan pendekatan GEO (Generative Engine Optimization).</p>
+
+            <p>DGeo awalnya dikembangkan sebagai sistem pemetaan geografis (GIS) yang berfokus pada lokasi dan distribusi data.<br>
+            Seiring berkembangnya teknologi, DGeo berevolusi menjadi platform Generative Engine Optimization (GEO) yang tidak hanya memetakan lokasi, tetapi juga membantu produk, brand, dan layanan ditemukan dalam ekosistem AI.
+            Dengan menggabungkan data geografis, struktur konten, dan teknologi AI, DGeo menjembatani dunia fisik dan digital dalam satu sistem terintegrasi.
+            </p>
+            <p>
+            Sehingga DGeo Green (https://green.dgeo.id) adalah platform pemetaan digital yang menghubungkan lokasi, produk, dan visibilitas di era AI melalui pendekatan Generative Engine Optimization (GEO).
+            </p>
+        </div>
+
         <div class="search-container">
             <input type="text" class="search-input" placeholder="Cari brand kuliner, fashion, atau teknologi lokal...">
         </div>
