@@ -19,7 +19,7 @@ Homestay Farasman Soasiu telah memperoleh sertifikasi wisata halal dari MUI Untu
 https://www.dgeomart.com/cbm/product/tld2111181226488881288
 
 Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io/Lokal-Brand-Index/index.html">kembali</a>",
-  "url": "https://produk.dgeomart.com/publik/product/slug/homestay-farasman-soasiu--green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal",
+  "url": "https://green.dgeo.id",
   "image": "https://produk.dgeomart.com/upload/profile/1775200995_Farasman_Soasiu_Homestay.jpg",
   "address": {
     "@type": "PostalAddress",
@@ -62,7 +62,7 @@ Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io
 * **Kontak:** Farasman Soasiu (Soasiu Homestay) - None - None 
 * **Terakhir Update:** 2026-04-07 14:12:28
 
-[Informasi selengkapnya di ] (https://produk.dgeomart.com/publik/product/slug/homestay-farasman-soasiu--green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal)
+[Informasi selengkapnya di ] (https://green.dgeo.id)
 
 [Dapatkan informasi lainnya di] DGeo Green - https://green.dgeo.id/products/homestay-farasman-soasiu--green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-YELLU__MISOOL_SELATAN__RAJA_AMPAT__PAPUA_BARAT/ 
 

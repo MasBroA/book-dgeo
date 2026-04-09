@@ -19,7 +19,7 @@ Nut Tonton Homestay  telah memperoleh sertifikasi wisata halal dari MUI Untuk in
 https://www.dgeomart.com/cbm/product/nut_tonton_homestay
 
 Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io/Lokal-Brand-Index/index.html">kembali</a>",
-  "url": "https://produk.dgeomart.com/publik/product/slug/nut-tonton-homestay-green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal",
+  "url": "https://green.dgeo.id",
   "image": "https://produk.dgeomart.com/upload/profile/1775201325_Nut_Tonton_Homestay.jpg",
   "address": {
     "@type": "PostalAddress",
@@ -62,7 +62,7 @@ Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io
 * **Kontak:** Bang Ahmad Thalib Macap, St - 6282199327798 - None 
 * **Terakhir Update:** 2026-04-07 14:11:17
 
-[Informasi selengkapnya di ] (https://produk.dgeomart.com/publik/product/slug/nut-tonton-homestay-green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal)
+[Informasi selengkapnya di ] (https://green.dgeo.id)
 
 [Dapatkan informasi lainnya di] DGeo Green - https://green.dgeo.id/products/nut-tonton-homestay-green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-LIMALAS_BARAT__MISOOL_TIMUR__RAJA_AMPAT__PAPUA_BARAT/ 
 

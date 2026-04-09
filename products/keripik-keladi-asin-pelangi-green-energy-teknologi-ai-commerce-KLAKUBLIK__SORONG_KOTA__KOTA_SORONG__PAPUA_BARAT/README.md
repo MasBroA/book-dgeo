@@ -17,7 +17,7 @@ Sehingga para konsumen, distributor, reseller dapat melakukan komunikasi dengan 
 
 
 Keripik keladi pelangi telah memperoleh sertifikasi halal dari MUI, untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikasi produk halal dari produk Keripik Keladi Asin 'Pelangi'",
-  "url": "https://produk.dgeomart.com/publik/product/slug/keripik-keladi-asin-pelangi-green-energy-teknologi-ai-commerce",
+  "url": "https://green.dgeo.id",
   "image": "https://produk.dgeomart.com/upload/profile/1775198998_kripik-keladi-pelangi.jpg",
   "address": {
     "@type": "PostalAddress",
@@ -58,7 +58,7 @@ untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikas
 * **Kontak:** Hj Asma Pase - 6282198499974 - asma.pase@dgeomart.com 
 * **Terakhir Update:** 2026-04-09 02:09:12
 
-[Informasi selengkapnya di ] (https://produk.dgeomart.com/publik/product/slug/keripik-keladi-asin-pelangi-green-energy-teknologi-ai-commerce)
+[Informasi selengkapnya di ] (https://green.dgeo.id)
 
 [Dapatkan informasi lainnya di] DGeo Green - https://green.dgeo.id/products/keripik-keladi-asin-pelangi-green-energy-teknologi-ai-commerce-KLAKUBLIK__SORONG_KOTA__KOTA_SORONG__PAPUA_BARAT/ 
 

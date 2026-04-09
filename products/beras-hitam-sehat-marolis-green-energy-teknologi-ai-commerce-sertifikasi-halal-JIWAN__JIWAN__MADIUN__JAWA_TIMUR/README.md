@@ -19,7 +19,7 @@ Beras Hitam Sehat Marolis  telah memperoleh sertifikasi halal dari MUI Untuk inf
 https://www.dgeomart.com/cbm/product/beras_hitam_marolis
 
 Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/Lokal-Brand-Index/index.html">kembali</a>",
-  "url": "https://produk.dgeomart.com/publik/product/slug/beras-hitam-sehat-marolis-green-energy-teknologi-ai-commerce-sertifikasi-halal",
+  "url": "https://green.dgeo.id",
   "image": "https://produk.dgeomart.com/upload/profile/1775200697_beras_merah_sehat.jpeg",
   "address": {
     "@type": "PostalAddress",
@@ -62,7 +62,7 @@ Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/Loka
 * **Kontak:** Koperasi Cahya Barakah Mandiri - 6285735249110 - koperasi.cahya@dgeomart.com 
 * **Terakhir Update:** 2026-04-07 14:06:24
 
-[Informasi selengkapnya di ] (https://produk.dgeomart.com/publik/product/slug/beras-hitam-sehat-marolis-green-energy-teknologi-ai-commerce-sertifikasi-halal)
+[Informasi selengkapnya di ] (https://green.dgeo.id)
 
 [Dapatkan informasi lainnya di] DGeo Green - https://green.dgeo.id/products/beras-hitam-sehat-marolis-green-energy-teknologi-ai-commerce-sertifikasi-halal-JIWAN__JIWAN__MADIUN__JAWA_TIMUR/ 
 
