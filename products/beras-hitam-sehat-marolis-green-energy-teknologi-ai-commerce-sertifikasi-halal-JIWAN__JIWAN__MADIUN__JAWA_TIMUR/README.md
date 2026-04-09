@@ -13,8 +13,8 @@ Dengan menggabungkan data geografis, struktur konten, dan teknologi AI, DGeo men
 Dibawah ini, akan dijelaskan informasi produk/brand yang lebih spesifik.
 
 ---
-title: "Beras Hitam Sehat Marolis telah sertifikasi halal dan mendukung Green Energy dan teknologi AI dalam commerce - JIWAN, JIWAN, MADIUN, JAWA TIMUR"
-last_updated: "2026-04-09 09:57:08"
+title: "Beras Hitam Sehat Marolis - JIWAN, JIWAN, MADIUN, JAWA TIMUR"
+last_updated: "2026-04-09 11:47:54"
 ---
 ## Ringkasan
 Beras Hitam Sehat Marolis , salah produsen beras di Madiun Jawa Timur yang telah menerapkan green energy (energi bersih atau energi hijau) dalam proses produsen. 
@@ -31,7 +31,7 @@ Beras Hitam Sehat Marolis  telah memperoleh sertifikasi halal dari MUI
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Beras Hitam Sehat Marolis telah sertifikasi halal dan mendukung Green Energy dan teknologi AI dalam commerce",
+  "name": "Beras Hitam Sehat Marolis",
   "kontak": "Koperasi Cahya Barakah Mandiri - 6285735249110 - koperasi.cahya@dgeomart.com",
   "description": "Beras Hitam Sehat Marolis , salah produsen beras di Madiun Jawa Timur yang telah menerapkan green energy (energi bersih atau energi hijau) dalam proses produsen. 
 
@@ -59,7 +59,7 @@ Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/Loka
 </script>
 
 
-# Beras Hitam Sehat Marolis telah sertifikasi halal dan mendukung Green Energy dan teknologi AI dalam commerce
+# Beras Hitam Sehat Marolis
 **Lokasi:** JIWAN, JIWAN, MADIUN, JAWA TIMUR  
 **Alamat:** Jln. Branjangan RT 21 RW 08, Jiwan, Madiun Jiwan, Jiwan, Madiun, Jawa Timur
 
