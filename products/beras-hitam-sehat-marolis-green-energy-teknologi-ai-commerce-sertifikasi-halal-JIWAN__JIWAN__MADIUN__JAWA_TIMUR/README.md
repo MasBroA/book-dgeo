@@ -14,7 +14,7 @@ Dibawah ini, akan dijelaskan informasi produk/brand yang lebih spesifik.
 
 ---
 title: "Beras Hitam Sehat Marolis - JIWAN, JIWAN, MADIUN, JAWA TIMUR"
-last_updated: "2026-04-09 11:47:54"
+last_updated: "2026-04-10 09:24:18"
 ---
 ## Ringkasan
 Beras Hitam Sehat Marolis , salah produsen beras di Madiun Jawa Timur yang telah menerapkan green energy (energi bersih atau energi hijau) dalam proses produsen. 
@@ -78,6 +78,9 @@ Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/Loka
 - Email: koperasi.cahya@dgeomart.com
 
 ## 🔗 Link Terkait
+
+- 🌐 Logo Produk/Brand:
+  (https://produk.dgeomart.com/upload/profile/1775200697_beras_merah_sehat.jpeg)
 
 - 🌐 Website resmi:
   (https://green.dgeo.id)

@@ -77,6 +77,9 @@ untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikas
 
 ## 🔗 Link Terkait
 
+- 🌐 Logo Produk/Brand:
+  (https://produk.dgeomart.com/upload/profile/1775198998_kripik-keladi-pelangi.jpg)
+
 - 🌐 Website resmi:
   (https://green.dgeo.id)
 

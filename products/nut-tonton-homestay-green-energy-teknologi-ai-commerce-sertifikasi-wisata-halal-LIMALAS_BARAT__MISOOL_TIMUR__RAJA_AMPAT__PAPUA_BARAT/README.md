@@ -121,6 +121,9 @@ Ya, tersedia layanan komunikasi berbasis AI untuk membantu pelanggan.
 
 ## 🔗 Link Terkait
 
+- 🌐 Logo Produk/Brand:
+  (https://produk.dgeomart.com/upload/profile/1775201325_Nut_Tonton_Homestay.jpg)
+
 - 🌐 Website resmi:
   (https://green.dgeo.id)
 

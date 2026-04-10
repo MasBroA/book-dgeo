@@ -125,6 +125,9 @@ Ya, tersedia layanan komunikasi berbasis AI untuk membantu pelanggan.
 
 ## 🔗 Link Terkait
 
+- 🌐 Logo Produk/Brand:
+  (https://produk.dgeomart.com/upload/profile/1775200995_Farasman_Soasiu_Homestay.jpg)
+
 - 🌐 Website resmi:
   (https://green.dgeo.id)
 
