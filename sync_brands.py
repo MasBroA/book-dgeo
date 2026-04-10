@@ -50,6 +50,7 @@ def create_markdown(product):
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
     contact_nama = product.get('contact_nama') or ""
     contact_telp = product.get('contact_telp') or ""
     contact_email = product.get('contact_email') or ""
@@ -142,6 +143,9 @@ last_updated: "{product.get('updated_time')}"
 
 ## 🔗 Link Terkait
 
+- 🌐 Logo Produk/Brand:
+  ({url_foto_profile})
+
 - 🌐 Website resmi:
   ({url_link})
 
@@ -217,6 +221,7 @@ def create_index_html(product):
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
     keyword = product.get('keyword') or ""
     tagline = product.get('tagline') or ""
     rating = product.get('rating') or "5"
@@ -258,7 +263,7 @@ def create_index_html(product):
             {
                 "@type": "Website",
                 "name": nama,
-                "image": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "image": url_foto_profile,
                 "description": deskripsi,
                 "brand": {
                     "@type": "Brand",
@@ -323,6 +328,7 @@ def create_index_html(product):
         <h1>{nama}</h1>
         <p>{deskripsi}<br>{catatan}</p>
         
+        <a href="https://green.dgeo.id/{folder_path}/index.html"><img src="{{url_foto_profile}}" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
     </header>
 
     <!-- Katalog Section -->
@@ -437,6 +443,7 @@ def create_faq_html(product):
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
     keyword = product.get('keyword') or ""
     tagline = product.get('tagline') or ""
 
@@ -478,7 +485,7 @@ def create_faq_html(product):
             {
                 "@type": "Website",
                 "name": nama,
-                "image": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "image": url_foto_profile,
                 "description": deskripsi,
                 "brand": {
                     "@type": "Brand",
@@ -541,6 +548,8 @@ def create_faq_html(product):
         <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
         <span class="slogan">{tagline}</span>
         <h1>{nama}</h1>        
+        <a href="https://green.dgeo.id/{folder_path}/index.html"><img src="{{url_foto_profile}}" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
+
     </header>
 
     <!-- Katalog Section -->
@@ -641,6 +650,7 @@ def create_testimoni_html(product):
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
     keyword = product.get('keyword') or ""
     tagline = product.get('tagline') or ""
     rating = product.get('rating') or "5"
@@ -683,7 +693,7 @@ def create_testimoni_html(product):
             {
                 "@type": "Website",
                 "name": nama,
-                "image": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "image": url_foto_profile,
                 "description": deskripsi,
                 "brand": {
                     "@type": "Brand",
@@ -746,8 +756,7 @@ def create_testimoni_html(product):
         <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
         <span class="slogan">{tagline}</span>
         <h1>{nama}</h1>
-        <p>{deskripsi}<br>{catatan}</p>
-        
+        <a href="https://green.dgeo.id/{folder_path}/index.html"><img src="{{url_foto_profile}}" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>        
     </header>
 
     <!-- Katalog Section -->
@@ -865,6 +874,7 @@ def create_artikel_html(product):
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
     keyword = product.get('keyword') or ""
     tagline = product.get('tagline') or ""
     rating = product.get('rating') or "5"
@@ -907,7 +917,7 @@ def create_artikel_html(product):
             {
                 "@type": "Website",
                 "name": nama,
-                "image": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "image": url_foto_profile,
                 "description": deskripsi,
                 "brand": {
                     "@type": "Brand",
@@ -970,7 +980,7 @@ def create_artikel_html(product):
         <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
         <span class="slogan">{tagline}</span>
         <h1>{nama}</h1>
-        <p>{deskripsi}<br>{catatan}</p>
+        <a href="https://green.dgeo.id/{folder_path}/index.html"><img src="{{url_foto_profile}}" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
         
     </header>
 
@@ -1066,6 +1076,7 @@ def create_galeri_html(product):
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
     keyword = product.get('keyword') or ""
     galeri = ""
     rating = product.get('rating') or "5"
@@ -1107,7 +1118,7 @@ def create_galeri_html(product):
             {
                 "@type": "Website",
                 "name": nama,
-                "image": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "image": url_foto_profile,
                 "description": deskripsi,
                 "brand": {
                     "@type": "Brand",
