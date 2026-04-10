@@ -21,6 +21,28 @@ def create_markdown(product):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
+    items_faq = []
+    list_faq=""
+    list_artikel=""
+    list_testimoni=""
+
+    for i, a in enumerate(product['FAQ']):
+        items_faq.append({
+            "@type": "Question",
+            "name": a['judul'],
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": a['short_desc']
+            }
+        })
+        list_faq += f'<p>Q:{a['judul']}<br>A:{a['short_desc']}</p>'
+
+    for i, a in enumerate(product['ARTIKEL']):
+        list_artikel += f'- 📄 {a['judul']}\n{a['deskripsi']}\n\n---\n'
+
+    for i, a in enumerate(product['TESTIMONI']):
+        list_testimoni += f'- 📄 {a['short_desc']}\n{a['by_nama']}, {a['by_jabatan']}, {a['by_alamat']}\n\n---\n'
+
 
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
@@ -110,11 +132,9 @@ last_updated: "{product.get('updated_time')}"
 - Latitude: {product.get('latitude')}
 - Longitude: {product.get('longitude')}
 
-### Tentang produk/brand ini
+## Tentang produk/brand ini
 {catatan}
 
-
----
 ## 📞 Kontak
 - Nama: {product.get('contact_nama')}
 - Telepon: {product.get('contact_telp')}
@@ -128,6 +148,19 @@ last_updated: "{product.get('updated_time')}"
 - 📄 Halaman produk:
   https://green.dgeo.id/{directory}/{slug}-{wilayah_name}/
 
+---
+## FAQ
+{list_faq}
+
+---
+## Artikel Terkait
+{list_artikel}
+
+---
+## Testimoni
+{list_testimoni}
+
+---
 - 🔙 Kembali ke indeks:
   https://green.dgeo.id
 
@@ -135,7 +168,6 @@ last_updated: "{product.get('updated_time')}"
 
 ## 🔍 Transparansi & Sumber Data
 Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Green.
-
 
 ---
 
@@ -155,14 +187,39 @@ def create_index_html(product):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
+    items_faq = []
+    list_faq=""
+    list_artikel=""
+    list_testimoni=""
+
+    for i, a in enumerate(product['FAQ']):
+        items_faq.append({
+            "@type": "Question",
+            "name": a['judul'],
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": a['short_desc']
+            }
+        })
+        list_faq += f'<p>Q:{a['judul']}<br>A:{a['short_desc']}</p>'
+
+    for i, a in enumerate(product['ARTIKEL']):
+        list_artikel += f'- 📄 {a['judul']}\n{a['deskripsi']}\n\n---\n'
+
+    for i, a in enumerate(product['TESTIMONI']):
+        list_testimoni += f'- 📄 {a['short_desc']}\n{a['by_nama']}, {a['by_jabatan']}, {a['by_alamat']}\n\n---\n'
+
 
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
+    short_desc =  product.get('short_desc') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
     keyword = product.get('keyword') or ""
+    tagline = product.get('tagline') or ""
+    rating = product.get('rating') or "5"
 
     # Gunakan slug dari API untuk nama file
     wilayah_name = wilayah.replace(",", "_")
@@ -214,16 +271,7 @@ def create_index_html(product):
     faq_schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Apa standar brand yang masuk dalam Lokal Brand Index?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Brand harus memenuhi minimal satu dari tiga kriteria: memiliki sertifikasi halal (produk/wisata), menggunakan energi bersih/ramah lingkungan dalam proses produksi, atau mengintegrasikan teknologi AI dalam layanan konsumen."
-                }
-            }
-        ]
+        "mainEntity": items_faq
     }
 
     html_content = f"""<!DOCTYPE html>
@@ -237,15 +285,15 @@ def create_index_html(product):
     <meta name="author" content="DGeoId">
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified</title>
-    <meta name="description" content="Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk">
+    <title>{short_desc}</title>
+    <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified">
-    <meta property="og:description" content="Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk">
+    <meta property="og:title" content="{short_desc}">
+    <meta property="og:description" content="{short_desc}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -271,9 +319,9 @@ def create_index_html(product):
     <!-- Header & Hero -->
     <header class="hero">
         <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
-        <span class="slogan">Smart Indexing for Sustainable Local Growth, Green Energy, AI Verified and Halal Certified</span>
-        <h1>Platform index lokal produk yang Green Energy Verified, Halal Certified dan AI Verified</h1>
-        <p>Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk</p>
+        <span class="slogan">{tagline}</span>
+        <h1>{nama}</h1>
+        <p>{deskripsi}<br>{catatan}</p>
         
     </header>
 
@@ -281,19 +329,33 @@ def create_index_html(product):
     <main class="container">
 
         <div class="section-header">
-<center>
-<h2>title: "{nama} - {wilayah}"</h2>
-<h3>Lokasi:{wilayah}</h3>
-<h3>Alamat: {product.get('alamat')}</h3>
-<h4>last_updated: "{product.get('updated_time')}"</h4>
-</center>
-        <div class="rating-badge">
-            <span class="stars">★★★★★</span> 
-            <strong>5/5</strong> 
-            <a href="https://green.dgeo.id/testimoni"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
-        </div>
+            <center>
+            <h3>Lokasi:{wilayah}</h3>
+            <h3>Alamat: {product.get('alamat')}</h3>
+            <h3>Kontak:{product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')}</h3> 
+            <h4>last_updated: "{product.get('updated_time')}"</h4>
+            </center>
+            <div class="rating-badge">
+                <span class="stars">★★★★★</span> 
+                <strong>{rating}/5</strong> 
+                <a href="https://green.dgeo.id/{folder_path}/testimoni.html"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
+            </div>
         </div>
         <br>
+        <section class="container">
+            <h2><b>FAQ</b></h2>
+            {list_faq}
+        </section>
+        <br>
+        <section class="container">
+            <h2><b>Artikel terkait</b></h2>
+            {list_artikel}
+        </section>
+        <br>
+        <section class="container">
+            <h2><b>Testimoni</b></h2>
+            {list_testimoni}
+        </section>
         <center>
         <div class="nav">
             <a href="https://green.dgeo.id/{folder_path}/index.html">Info Produk</a>        
@@ -304,18 +366,7 @@ def create_index_html(product):
         </div>
         </center>
         <br>
-
         <div class="section-header">
-<p>{deskripsi}</p>
-
-<p>{catatan}</p>
-        </div>
-
-        <div class="section-header">
-<p>Kontak:<br>
-{product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')}</p> 
-<p>Terakhir Update: {product.get('updated_time')}</p>
-
 <p>Informasi selengkapnya di ] ({url_link})</p>
 
 <p>Dapatkan informasi lainnya di DGeo Green - https://green.dgeo.id</p> 
@@ -330,8 +381,8 @@ def create_index_html(product):
             untuk audit dan verifikasi melalui repository publik berikut:
         </p>
         <p>
-            <a href="https://github.com/MasBroA/Lokal-Brand-Index" target="_blank" rel="noopener">
-            https://github.com/MasBroA/Lokal-Brand-Index
+            <a href="https://github.com/MasBroA/Lokal-Brand-Index/tree/main/{folder_path}" target="_blank" rel="noopener">
+            https://github.com/MasBroA/Lokal-Brand-Index/tree/main/{folder_path}
             </a>
         </p>
         <p>
@@ -364,15 +415,31 @@ def create_faq_html(product):
     directory = "products"
     if not os.path.exists(directory):
         os.makedirs(directory)
+    items_faq=[]
+    list_faq=""
+
+    for i, a in enumerate(product['FAQ']):
+        items_faq.append({
+            "@type": "Question",
+            "name": a['judul'],
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": a['short_desc']
+            }
+        })
+        list_faq += f'<p>Q:{a['judul']}<br>A:{a['short_desc']}</p>'
 
 
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
+    short_desc =  product.get('short_desc') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
+    url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
     keyword = product.get('keyword') or ""
+    tagline = product.get('tagline') or ""
+
     faq = ""
     # Gunakan slug dari API untuk nama file
     wilayah_name = wilayah.replace(",", "_")
@@ -424,16 +491,7 @@ def create_faq_html(product):
     faq_schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Apa standar brand yang masuk dalam Lokal Brand Index?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Brand harus memenuhi minimal satu dari tiga kriteria: memiliki sertifikasi halal (produk/wisata), menggunakan energi bersih/ramah lingkungan dalam proses produksi, atau mengintegrasikan teknologi AI dalam layanan konsumen."
-                }
-            }
-        ]
+        "mainEntity": items_faq
     }
 
     html_content = f"""<!DOCTYPE html>
@@ -447,15 +505,15 @@ def create_faq_html(product):
     <meta name="author" content="DGeoId">
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified</title>
-    <meta name="description" content="Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk">
+    <title>{short_desc}</title>
+    <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified">
-    <meta property="og:description" content="Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk">
+    <meta property="og:title" content="{short_desc}">
+    <meta property="og:description" content="{short_desc}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -481,15 +539,21 @@ def create_faq_html(product):
     <!-- Header & Hero -->
     <header class="hero">
         <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
-        <span class="slogan">Smart Indexing for Sustainable Local Growth, Green Energy, AI Verified and Halal Certified</span>
+        <span class="slogan">{tagline}</span>
+        <h1>{nama}</h1>        
     </header>
 
     <!-- Katalog Section -->
+    <main class="container">
+
+
+            <!-- Katalog Section -->
     <main class="container">
         <div class="section-header">
 <center>
 <h3>{nama}</h3>
 <h2><b>FAQ</b></h2>
+{list_faq}
 </center>
         </div>
         <br>
@@ -505,16 +569,6 @@ def create_faq_html(product):
         <br>
 
         <div class="section-header">
-<p>{faq}</p>
-
-
-        </div>
-
-        <div class="section-header">
-<p>Kontak:<br>
-{product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')}</p> 
-<p>Terakhir Update: {product.get('updated_time')}</p>
-
 <p>Informasi selengkapnya di ] ({url_link})</p>
 
 <p>Dapatkan informasi lainnya di DGeo Green - https://green.dgeo.id</p> 
@@ -529,8 +583,8 @@ def create_faq_html(product):
             untuk audit dan verifikasi melalui repository publik berikut:
         </p>
         <p>
-            <a href="https://github.com/MasBroA/Lokal-Brand-Index" target="_blank" rel="noopener">
-            https://github.com/MasBroA/Lokal-Brand-Index
+            <a href="https://github.com/MasBroA/Lokal-Brand-Index/tree/main/{folder_path}" target="_blank" rel="noopener">
+            https://github.com/MasBroA/Lokal-Brand-Index/tree/main/{folder_path}
             </a>
         </p>
         <p>
@@ -563,14 +617,34 @@ def create_testimoni_html(product):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
+    items_faq=[]
+    list_testimoni=""
+
+    for i, a in enumerate(product['FAQ']):
+        items_faq.append({
+            "@type": "Question",
+            "name": a['judul'],
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": a['short_desc']
+            }
+        })
+
+    for i, a in enumerate(product['TESTIMONI']):
+        list_testimoni += f'<p><i>{a['short_desc']}</i><br>{a['by_nama']}, {a['by_jabatan']}, {a['by_alamat']}</br></p>'
+
 
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
+    short_desc =  product.get('short_desc') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
+    url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
     keyword = product.get('keyword') or ""
+    tagline = product.get('tagline') or ""
+    rating = product.get('rating') or "5"
+
     testimoni = ""
     # Gunakan slug dari API untuk nama file
     wilayah_name = wilayah.replace(",", "_")
@@ -622,16 +696,7 @@ def create_testimoni_html(product):
     faq_schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Apa standar brand yang masuk dalam Lokal Brand Index?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Brand harus memenuhi minimal satu dari tiga kriteria: memiliki sertifikasi halal (produk/wisata), menggunakan energi bersih/ramah lingkungan dalam proses produksi, atau mengintegrasikan teknologi AI dalam layanan konsumen."
-                }
-            }
-        ]
+        "mainEntity": items_faq
     }
 
     html_content = f"""<!DOCTYPE html>
@@ -645,15 +710,15 @@ def create_testimoni_html(product):
     <meta name="author" content="DGeoId">
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified</title>
-    <meta name="description" content="Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk">
+    <title>{short_desc}</title>
+    <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified">
-    <meta property="og:description" content="Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk">
+    <meta property="og:title" content="{short_desc}">
+    <meta property="og:description" content="{short_desc}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -679,12 +744,30 @@ def create_testimoni_html(product):
     <!-- Header & Hero -->
     <header class="hero">
         <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
-        <span class="slogan">Smart Indexing for Sustainable Local Growth, Green Energy, AI Verified and Halal Certified</span>
+        <span class="slogan">{tagline}</span>
+        <h1>{nama}</h1>
+        <p>{deskripsi}<br>{catatan}</p>
+        
     </header>
 
     <!-- Katalog Section -->
     <main class="container">
+
+        <div class="section-header">
+            <center>
+            <h3>Lokasi:{wilayah}</h3>
+            <h3>Alamat: {product.get('alamat')}</h3>
+            <h3>Kontak:{product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')}</h3> 
+            <h4>last_updated: "{product.get('updated_time')}"</h4>
+            </center>
+            <div class="rating-badge">
+                <span class="stars">★★★★★</span> 
+                <strong>{rating}/5</strong> 
+                <a href="https://green.dgeo.id/{folder_path}/testimoni.html"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
+            </div>
+        </div>
         <br>
+
         <center>
         <div class="nav">
             <a href="https://green.dgeo.id/{folder_path}/index.html">Info Produk</a>        
@@ -699,18 +782,12 @@ def create_testimoni_html(product):
         <div class="section-header">
             <center>
                 <h3>{nama}</h3>
-                <h2><b>TESTIMONI</b></h2>
+                <h2><b>TESTIMONI</b></h2>]
+                {list_testimoni}
             </center>
         </div>
-        <div class="section-header">
-            <p>{testimoni}</p>
-
-
-        </div>
 
         <div class="section-header">
-            <p>Kontak:<br>
-            {product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')}</p> 
             <p>Terakhir Update: {product.get('updated_time')}</p>
 
             <p>Informasi selengkapnya di ] ({url_link})</p>
@@ -727,8 +804,8 @@ def create_testimoni_html(product):
             untuk audit dan verifikasi melalui repository publik berikut:
         </p>
         <p>
-            <a href="https://github.com/MasBroA/Lokal-Brand-Index" target="_blank" rel="noopener">
-            https://github.com/MasBroA/Lokal-Brand-Index
+            <a href="https://github.com/MasBroA/Lokal-Brand-Index/tree/main/{folder_path}" target="_blank" rel="noopener">
+            https://github.com/MasBroA/Lokal-Brand-Index/tree/main/{folder_path}
             </a>
         </p>
         <p>
@@ -761,15 +838,36 @@ def create_artikel_html(product):
     directory = "products"
     if not os.path.exists(directory):
         os.makedirs(directory)
+    items_faq=[]
+    list_artikel=""
+
+    for i, f in enumerate(product['FAQ']):
+        items_faq.append({
+            "@type": "Question",
+            "name": f['judul'],
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": f['short_desc']
+            }
+        })
+
+    for i, a in enumerate(product['ARTIKEL']):
+        list_artikel += f'- 📄 {a['judul']}\n{a['deskripsi']}\n\n---\n'
+
+
+
 
 
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
+    short_desc =  product.get('short_desc') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
+    url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
     keyword = product.get('keyword') or ""
+    tagline = product.get('tagline') or ""
+    rating = product.get('rating') or "5"
     artikel = ""
 
     # Gunakan slug dari API untuk nama file
@@ -822,16 +920,7 @@ def create_artikel_html(product):
     faq_schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Apa standar brand yang masuk dalam Lokal Brand Index?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Brand harus memenuhi minimal satu dari tiga kriteria: memiliki sertifikasi halal (produk/wisata), menggunakan energi bersih/ramah lingkungan dalam proses produksi, atau mengintegrasikan teknologi AI dalam layanan konsumen."
-                }
-            }
-        ]
+        "mainEntity": items_faq
     }
 
     html_content = f"""<!DOCTYPE html>
@@ -845,15 +934,15 @@ def create_artikel_html(product):
     <meta name="author" content="DGeoId">
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified</title>
-    <meta name="description" content="Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk">
+    <title>{short_desc}</title>
+    <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified">
-    <meta property="og:description" content="Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk">
+    <meta property="og:title" content="{short_desc}">
+    <meta property="og:description" content="{short_desc}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -879,11 +968,28 @@ def create_artikel_html(product):
     <!-- Header & Hero -->
     <header class="hero">
         <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
-        <span class="slogan">Smart Indexing for Sustainable Local Growth, Green Energy, AI Verified and Halal Certified</span>
+        <span class="slogan">{tagline}</span>
+        <h1>{nama}</h1>
+        <p>{deskripsi}<br>{catatan}</p>
+        
     </header>
 
     <!-- Katalog Section -->
     <main class="container">
+
+        <div class="section-header">
+            <center>
+            <h3>Lokasi:{wilayah}</h3>
+            <h3>Alamat: {product.get('alamat')}</h3>
+            <h3>Kontak:{product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')}</h3> 
+            <h4>last_updated: "{product.get('updated_time')}"</h4>
+            </center>
+            <div class="rating-badge">
+                <span class="stars">★★★★★</span> 
+                <strong>{rating}/5</strong> 
+                <a href="https://green.dgeo.id/{folder_path}/testimoni.html"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
+            </div>
+        </div>
         <br>
         <center>
         <div class="nav">
@@ -899,17 +1005,10 @@ def create_artikel_html(product):
             <center>
             <h3>{nama}</h3>
             <h2><b>ARTIKEL</b></h2>
+            {list_artikel}
             </center>
         </div>
         <div class="section-header">
-            <p>{artikel}</p>
-
-
-        </div>
-
-        <div class="section-header">
-            <p>Kontak:<br>
-            {product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')}</p> 
             <p>Terakhir Update: {product.get('updated_time')}</p>
 
             <p>Informasi selengkapnya di ] ({url_link})</p>
@@ -926,8 +1025,8 @@ def create_artikel_html(product):
             untuk audit dan verifikasi melalui repository publik berikut:
         </p>
         <p>
-            <a href="https://github.com/MasBroA/Lokal-Brand-Index" target="_blank" rel="noopener">
-            https://github.com/MasBroA/Lokal-Brand-Index
+            <a href="https://github.com/MasBroA/Lokal-Brand-Index/tree/main/{folder_path}" target="_blank" rel="noopener">
+            https://github.com/MasBroA/Lokal-Brand-Index/tree/main/{folder_path}
             </a>
         </p>
         <p>
@@ -969,6 +1068,7 @@ def create_galeri_html(product):
     url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
     keyword = product.get('keyword') or ""
     galeri = ""
+    rating = product.get('rating') or "5"
     
     # Gunakan slug dari API untuk nama file
     wilayah_name = wilayah.replace(",", "_")
