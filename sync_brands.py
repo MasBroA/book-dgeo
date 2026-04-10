@@ -1285,7 +1285,8 @@ def copy_file(product):
     shutil.copy2('./llms.txt', folder_path)
     shutil.copy2('./ai.txt', folder_path)
     shutil.copy2('./knowledge.txt', folder_path)
-
+    shutil.copy2('./8d545211-fb9f-4aab-9534-8670cee35af9.txt', folder_path)
+    
 def create_sitemap_html(product):
     base_url = "https://green.dgeo.id/products/"
     directory = "products"
