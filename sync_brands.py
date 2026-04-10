@@ -35,7 +35,7 @@ def create_markdown(product):
                 "text": a["short_desc"]
             }
         })
-        list_faq += f'<p>Q:{a["judul"]}<br>A:{a["short_desc"]}</p>'
+        list_faq += f'- Q:{a["judul"]}\n  A:{a["short_desc"]}\n\n---\n'
 
     for i, a in enumerate(product['ARTIKEL']):
         list_artikel += f'- 📄 {a["judul"]}\n{a["deskripsi"]}\n\n---\n'
@@ -285,15 +285,15 @@ def create_index_html(product):
     <meta name="author" content="DGeoId">
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{deskripsi}</title>
-    <meta name="description" content="{deskripsi} {catatan}">
+    <title>{nama}</title>
+    <meta name="description" content="{deskripsi}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{deskripsi}">
-    <meta property="og:description" content="{deskripsi} {catatan}">
+    <meta property="og:title" content="{nama}">
+    <meta property="og:description" content="{deskripsi}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -505,15 +505,15 @@ def create_faq_html(product):
     <meta name="author" content="DGeoId">
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{deskripsi}</title>
-    <meta name="description" content="{deskripsi} {catatan}">
+    <title>{nama}</title>
+    <meta name="description" content="{deskripsi}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{deskripsi}">
-    <meta property="og:description" content="{deskripsi} {catatan}">
+    <meta property="og:title" content="{nama}">
+    <meta property="og:description" content="{deskripsi}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -710,15 +710,15 @@ def create_testimoni_html(product):
     <meta name="author" content="DGeoId">
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{deskripsi}</title>
-    <meta name="description" content="{deskripsi} {catatan}">
+    <title>{nama}</title>
+    <meta name="description" content="{deskripsi}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{deskripsi}">
-    <meta property="og:description" content="{deskripsi} {catatan}">
+    <meta property="og:title" content="{nama}">
+    <meta property="og:description" content="{deskripsi}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -934,15 +934,15 @@ def create_artikel_html(product):
     <meta name="author" content="DGeoId">
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{deskripsi}</title>
-    <meta name="description" content="{deskripsi} {catatan}">
+    <title>{nama}</title>
+    <meta name="description" content="{deskripsi}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{deskripsi}">
-    <meta property="og:description" content="{deskripsi} {catatan}">
+    <meta property="og:title" content="{nama}">
+    <meta property="og:description" content="{deskripsi}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -1143,15 +1143,15 @@ def create_galeri_html(product):
     <meta name="author" content="DGeoId">
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{deskripsi}</title>
-    <meta name="description" content="{deskripsi} {catatan}">
+    <title>{nama}</title>
+    <meta name="description" content="{deskripsi}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{deskripsi}">
-    <meta property="og:description" content="{deskripsi} {catatan}">
+    <meta property="og:title" content="{nama}">
+    <meta property="og:description" content="{deskripsi}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
