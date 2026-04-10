@@ -47,6 +47,7 @@ def create_markdown(product):
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
+    short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
@@ -83,7 +84,7 @@ def create_markdown(product):
   "@type": "LocalBusiness",
   "name": "{nama}",
   "kontak": "{contact_nama} - {contact_telp} - {contact_email}",
-  "description": "{deskripsi} {catatan}",
+  "description": "{short_desc} {catatan}",
   "url": "{url_link}",
   "image": "{product.get('url_foto_profile')}",
   "address": {{
@@ -101,38 +102,30 @@ def create_markdown(product):
 </script>
 """
 
-    content = f"""# Storytelling
-DGeo, https://www.dgeo.id,  adalah platform berbasis lokasi yang membantu brand dan produk ditemukan melalui AI dan pencarian berbasis geografis dengan pendekatan GEO (Generative Engine Optimization).
-
-DGeo awalnya dikembangkan sebagai sistem pemetaan geografis (GIS) yang berfokus pada lokasi dan distribusi data.
-Seiring berkembangnya teknologi, DGeo berevolusi menjadi platform Generative Engine Optimization (GEO) yang tidak hanya memetakan lokasi, tetapi juga membantu produk, brand, dan layanan ditemukan dalam ekosistem AI.
-Dengan menggabungkan data geografis, struktur konten, dan teknologi AI, DGeo menjembatani dunia fisik dan digital dalam satu sistem terintegrasi.
-
-# 🇮🇩 Indeks Merek Lokal (Lokal Brand Index)
+    content = f"""# 🇮🇩 Indeks Merek Lokal (Lokal Brand Index)
 
 **Indeks Merek Lokal** adalah direktori terstruktur berbasis lokasi yang mengedepankan dukungan terhadap energi hijau (~energi terbarukan), ramah lingkungan, dengan memenuhi sertifikasi halal MUI, yang dirancang untuk meningkatkan visibilitas merek lokal Indonesia dalam ekosistem *Generative Engine Optimization (GEO)*.
-
-# Informasi spesifik Produk/Brand
-Dibawah ini, akan dijelaskan informasi produk/brand yang lebih spesifik.
-
----
-title: "{nama} - {wilayah}"
-last_updated: "{product.get('updated_time')}"
----
-## Ringkasan
-{deskripsi}
 
 ---
 {json_ld}
 
-# {nama}
+---
+title: "{nama} - {wilayah}"
+
 **Lokasi:** {wilayah}  
+
 **Alamat:** {product.get('alamat')}
 
 **Koordinat:**
 - Latitude: {product.get('latitude')}
 - Longitude: {product.get('longitude')}
 
+last_updated: "{product.get('updated_time')}"
+---
+## Ringkasan
+{deskripsi}
+
+---
 ## Tentang produk/brand ini
 {catatan}
 
@@ -217,7 +210,7 @@ def create_index_html(product):
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
-    short_desc =  product.get('short_desc') or "Deskripsi tidak tersedia."
+    short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
@@ -264,7 +257,7 @@ def create_index_html(product):
                 "@type": "Website",
                 "name": nama,
                 "image": url_foto_profile,
-                "description": deskripsi,
+                "description": short_desc,
                 "brand": {
                     "@type": "Brand",
                     "name": nama
@@ -291,14 +284,14 @@ def create_index_html(product):
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{nama}</title>
-    <meta name="description" content="{deskripsi}">
+    <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{nama}">
-    <meta property="og:description" content="{deskripsi}">
+    <meta property="og:description" content="{short_desc}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -403,7 +396,8 @@ def create_index_html(product):
             <a href="https://green.dgeo.id/tentang.html">Tentang</a>
             <a href="https://green.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 DGeoGreen  - Smart Indexing for Sustainable Local Growth. All rights reserved.</p>
+        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 
 </body>
@@ -439,7 +433,7 @@ def create_faq_html(product):
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
-    short_desc =  product.get('short_desc') or "Deskripsi tidak tersedia."
+    short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
@@ -486,7 +480,7 @@ def create_faq_html(product):
                 "@type": "Website",
                 "name": nama,
                 "image": url_foto_profile,
-                "description": deskripsi,
+                "description": short_desc,
                 "brand": {
                     "@type": "Brand",
                     "name": nama
@@ -513,14 +507,14 @@ def create_faq_html(product):
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{nama}</title>
-    <meta name="description" content="{deskripsi}">
+    <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{nama}">
-    <meta property="og:description" content="{deskripsi}">
+    <meta property="og:description" content="{short_desc}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -608,7 +602,8 @@ def create_faq_html(product):
             <a href="https://green.dgeo.id/tentang.html">Tentang</a>
             <a href="https://green.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 DGeoGreen  - Smart Indexing for Sustainable Local Growth. All rights reserved.</p>
+        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 
 </body>
@@ -646,7 +641,7 @@ def create_testimoni_html(product):
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
-    short_desc =  product.get('short_desc') or "Deskripsi tidak tersedia."
+    short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
@@ -694,7 +689,7 @@ def create_testimoni_html(product):
                 "@type": "Website",
                 "name": nama,
                 "image": url_foto_profile,
-                "description": deskripsi,
+                "description": short_desc,
                 "brand": {
                     "@type": "Brand",
                     "name": nama
@@ -721,14 +716,14 @@ def create_testimoni_html(product):
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{nama}</title>
-    <meta name="description" content="{deskripsi}">
+    <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{nama}">
-    <meta property="og:description" content="{deskripsi}">
+    <meta property="og:description" content="{short_desc}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -829,7 +824,8 @@ def create_testimoni_html(product):
             <a href="https://green.dgeo.id/tentang.html">Tentang</a>
             <a href="https://green.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 DGeoGreen  - Smart Indexing for Sustainable Local Growth. All rights reserved.</p>
+        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 
 </body>
@@ -870,7 +866,7 @@ def create_artikel_html(product):
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
-    short_desc =  product.get('short_desc') or "Deskripsi tidak tersedia."
+    short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
@@ -918,7 +914,7 @@ def create_artikel_html(product):
                 "@type": "Website",
                 "name": nama,
                 "image": url_foto_profile,
-                "description": deskripsi,
+                "description": short_desc,
                 "brand": {
                     "@type": "Brand",
                     "name": nama
@@ -945,14 +941,14 @@ def create_artikel_html(product):
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{nama}</title>
-    <meta name="description" content="{deskripsi}">
+    <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{nama}">
-    <meta property="og:description" content="{deskripsi}">
+    <meta property="og:description" content="{short_desc}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -1051,7 +1047,8 @@ def create_artikel_html(product):
             <a href="https://green.dgeo.id/tentang.html">Tentang</a>
             <a href="https://green.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 DGeoGreen  - Smart Indexing for Sustainable Local Growth. All rights reserved.</p>
+        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 
 </body>
@@ -1073,6 +1070,7 @@ def create_galeri_html(product):
     # Proteksi jika data null
     nama = product.get('nama') or "Produk Tanpa Nama"
     deskripsi = product.get('deskripsi') or product.get('short_desc') or "Deskripsi tidak tersedia."
+    short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
     url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
@@ -1119,7 +1117,7 @@ def create_galeri_html(product):
                 "@type": "Website",
                 "name": nama,
                 "image": url_foto_profile,
-                "description": deskripsi,
+                "description": short_desc,
                 "brand": {
                     "@type": "Brand",
                     "name": nama
@@ -1155,14 +1153,14 @@ def create_galeri_html(product):
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{nama}</title>
-    <meta name="description" content="{deskripsi}">
+    <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
     <link rel="canonical" href="https://green.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{nama}">
-    <meta property="og:description" content="{deskripsi}">
+    <meta property="og:description" content="{short_desc}">
     <meta property="og:url" content="https://green.dgeo.id/">
     <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
@@ -1249,7 +1247,8 @@ def create_galeri_html(product):
             <a href="https://green.dgeo.id/tentang.html">Tentang</a>
             <a href="https://green.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 DGeoGreen  - Smart Indexing for Sustainable Local Growth. All rights reserved.</p>
+        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 
 </body>
@@ -2000,7 +1999,8 @@ def update_index_html(products):
             <a href="https://green.dgeo.id/tentang.html">Tentang</a>
             <a href="https://green.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 DGeoGreen  - Smart Indexing for Sustainable Local Growth. All rights reserved.</p>
+        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 </body>
 </html>"""
