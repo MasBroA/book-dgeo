@@ -29,19 +29,19 @@ def create_markdown(product):
     for i, a in enumerate(product['FAQ']):
         items_faq.append({
             "@type": "Question",
-            "name": a['judul'],
+            "name": a["judul"],
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": a['short_desc']
+                "text": a["short_desc"]
             }
         })
-        list_faq += f'<p>Q:{a['judul']}<br>A:{a['short_desc']}</p>'
+        list_faq += f'<p>Q:{a["judul"]}<br>A:{a["short_desc"]}</p>'
 
     for i, a in enumerate(product['ARTIKEL']):
-        list_artikel += f'- 📄 {a['judul']}\n{a['deskripsi']}\n\n---\n'
+        list_artikel += f'- 📄 {a["judul"]}\n{a["deskripsi"]}\n\n---\n'
 
     for i, a in enumerate(product['TESTIMONI']):
-        list_testimoni += f'- 📄 {a['short_desc']}\n{a['by_nama']}, {a['by_jabatan']}, {a['by_alamat']}\n\n---\n'
+        list_testimoni += f'- 📄 {a["short_desc"]}\n{a["by_nama"]}, {a["by_jabatan"]}, {a["by_alamat"]}\n\n---\n'
 
 
     # Proteksi jika data null
@@ -195,19 +195,19 @@ def create_index_html(product):
     for i, a in enumerate(product['FAQ']):
         items_faq.append({
             "@type": "Question",
-            "name": a['judul'],
+            "name": a["judul"],
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": a['short_desc']
+                "text": a["short_desc"]
             }
         })
-        list_faq += f'<p>Q:{a['judul']}<br>A:{a['short_desc']}</p>'
+        list_faq += f'<p>Q:{a["judul"]}<br>A:{a["short_desc"]}</p>'
 
     for i, a in enumerate(product['ARTIKEL']):
-        list_artikel += f'- 📄 {a['judul']}\n{a['deskripsi']}\n\n---\n'
+        list_artikel += f'- 📄 {a["judul"]}\n{a["deskripsi"]}\n\n---\n'
 
     for i, a in enumerate(product['TESTIMONI']):
-        list_testimoni += f'- 📄 {a['short_desc']}\n{a['by_nama']}, {a['by_jabatan']}, {a['by_alamat']}\n\n---\n'
+        list_testimoni += f'- 📄 {a["short_desc"]}\n{a["by_nama"]}, {a["by_jabatan"]}, {a["by_alamat"]}\n\n---\n'
 
 
     # Proteksi jika data null
@@ -421,13 +421,13 @@ def create_faq_html(product):
     for i, a in enumerate(product['FAQ']):
         items_faq.append({
             "@type": "Question",
-            "name": a['judul'],
+            "name": a["judul"],
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": a['short_desc']
+                "text": a["short_desc"]
             }
         })
-        list_faq += f'<p>Q:{a['judul']}<br>A:{a['short_desc']}</p>'
+        list_faq += f'<p>Q:{a["judul"]}<br>A:{a["short_desc"]}</p>'
 
 
     # Proteksi jika data null
@@ -623,15 +623,15 @@ def create_testimoni_html(product):
     for i, a in enumerate(product['FAQ']):
         items_faq.append({
             "@type": "Question",
-            "name": a['judul'],
+            "name": a["judul"],
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": a['short_desc']
+                "text": a["short_desc"]
             }
         })
 
     for i, a in enumerate(product['TESTIMONI']):
-        list_testimoni += f'<p><i>{a['short_desc']}</i><br>{a['by_nama']}, {a['by_jabatan']}, {a['by_alamat']}</br></p>'
+        list_testimoni += f'<p><i>{a["short_desc"]}</i><br>{a["by_nama"]}, {a["by_jabatan"]}, {a["by_alamat"]}</br></p>'
 
 
     # Proteksi jika data null
@@ -852,7 +852,7 @@ def create_artikel_html(product):
         })
 
     for i, a in enumerate(product['ARTIKEL']):
-        list_artikel += f'- 📄 {a['judul']}\n{a['deskripsi']}\n\n---\n'
+        list_artikel += f'- 📄 {a["judul"]}\n{a["deskripsi"]}\n\n---\n'
 
 
 
