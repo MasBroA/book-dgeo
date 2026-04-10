@@ -298,7 +298,7 @@ def create_index_html(product):
     <meta property="og:image:height" content="630">
 
         <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/images/logo-dgeo-id.png" type="image/x-icon">
+    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
 
     <!-- JSON-LD Schema: Dioptimalkan untuk Rich Snippets (Bintang Kuning) -->
     <script type="application/ld+json">
@@ -521,7 +521,7 @@ def create_faq_html(product):
     <meta property="og:image:height" content="630">
 
         <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/images/logo-dgeo-id.png" type="image/x-icon">
+    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
 
     <!-- JSON-LD Schema: Dioptimalkan untuk Rich Snippets (Bintang Kuning) -->
     <script type="application/ld+json">
@@ -730,7 +730,7 @@ def create_testimoni_html(product):
     <meta property="og:image:height" content="630">
 
         <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/images/logo-dgeo-id.png" type="image/x-icon">
+    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
 
     <!-- JSON-LD Schema: Dioptimalkan untuk Rich Snippets (Bintang Kuning) -->
     <script type="application/ld+json">
@@ -955,7 +955,7 @@ def create_artikel_html(product):
     <meta property="og:image:height" content="630">
 
         <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/images/logo-dgeo-id.png" type="image/x-icon">
+    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
 
     <!-- JSON-LD Schema: Dioptimalkan untuk Rich Snippets (Bintang Kuning) -->
     <script type="application/ld+json">
@@ -1167,7 +1167,7 @@ def create_galeri_html(product):
     <meta property="og:image:height" content="630">
 
         <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/images/logo-dgeo-id.png" type="image/x-icon">
+    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
 
     <!-- JSON-LD Schema: Dioptimalkan untuk Rich Snippets (Bintang Kuning) -->
     <script type="application/ld+json">
@@ -1908,7 +1908,7 @@ def update_index_html(products):
     <meta property="og:image:height" content="630">
 
     <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/images/logo-dgeo-id.png" type="image/x-icon">
+    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
 
 
 
