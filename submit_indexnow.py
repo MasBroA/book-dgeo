@@ -1,10 +1,9 @@
 import requests
 
 API_KEY = "8d545211-fb9f-4aab-9534-8670cee35af9"
-HOST = "green.dgeo.id"
+HOST = "www.dgeo.id"
 
 url_list = [
-    "https://green.dgeo.id",
     "https://www.dgeo.id"
 ]
 
