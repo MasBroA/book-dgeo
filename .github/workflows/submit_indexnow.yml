@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '0 0 * * *' # Menjalankan otomatis setiap hari (opsional)
+    - cron: '0 30 * * *' # Menjalankan otomatis setiap hari (opsional)
   workflow_dispatch: # Memungkinkan kamu menjalankan manual dari tab Actions
 
 jobs:
