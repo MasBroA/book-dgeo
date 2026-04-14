@@ -5,10 +5,7 @@ HOST = "green.dgeo.id"
 
 url_list = [
     "https://green.dgeo.id",
-    "https://green.dgeo.id/products/keripik-keladi-asin-pelangi-green-energy-teknologi-ai-commerce-KLAKUBLIK__SORONG_KOTA__KOTA_SORONG__PAPUA_BARAT",
-    "https://green.dgeo.id/products/beras-hitam-sehat-marolis-green-energy-teknologi-ai-commerce-sertifikasi-halal-JIWAN__JIWAN__MADIUN__JAWA_TIMUR",
-    "https://green.dgeo.id/products/homestay-farasman-soasiu--green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-YELLU__MISOOL_SELATAN__RAJA_AMPAT__PAPUA_BARAT",
-    "https://green.dgeo.id/products/nut-tonton-homestay-green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-LIMALAS_BARAT__MISOOL_TIMUR__RAJA_AMPAT__PAPUA_BARAT"
+    "https://www.dgeo.id"
 ]
 
 endpoint = "https://api.indexnow.org/indexnow"
