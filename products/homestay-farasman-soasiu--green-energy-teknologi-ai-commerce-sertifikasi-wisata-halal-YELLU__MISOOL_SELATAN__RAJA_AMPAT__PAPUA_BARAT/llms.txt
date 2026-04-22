@@ -66,12 +66,12 @@ Content is available in:
 ---
 
 ## Example Entries
-- ./products/keripik-keladi-asin-pelangi-green-energy-teknologi-ai-commerce-KLAKUBLIK__SORONG_KOTA__KOTA_SORONG__PAPUA_BARAT/
 - ./products/nut-tonton-homestay-green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-LIMALAS_BARAT__MISOOL_TIMUR__RAJA_AMPAT__PAPUA_BARAT/
 - ./products/homestay-farasman-soasiu--green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-YELLU__MISOOL_SELATAN__RAJA_AMPAT__PAPUA_BARAT/
-- ./products/beras-hitam-sehat-marolis-green-energy-teknologi-ai-commerce-sertifikasi-halal-JIWAN__JIWAN__MADIUN__JAWA_TIMUR/
-- ./products/umroh-liburan-sekolah--27-jun--09-hari-direct-flight-by-garuda-indonesia-GAGA__LARANGAN__KOTA_TANGERANG__BANTEN/
 - ./products/umroh-super-friendly-12-juli-12-hari-direct-flight-by-garuda-indonesia-GAGA__LARANGAN__KOTA_TANGERANG__BANTEN/
+- ./products/beras-hitam-sehat-marolis-green-energy-teknologi-ai-commerce-sertifikasi-halal-JIWAN__JIWAN__MADIUN__JAWA_TIMUR/
+- ./products/keripik-keladi-asin-pelangi-green-energy-teknologi-ai-commerce-KLAKUBLIK__SORONG_KOTA__KOTA_SORONG__PAPUA_BARAT/
+- ./products/umroh-liburan-sekolah--27-jun--09-hari-direct-flight-by-garuda-indonesia-GAGA__LARANGAN__KOTA_TANGERANG__BANTEN/
 
 
 ---
