@@ -55,12 +55,12 @@ Setiap brand memiliki profil dalam format Markdown di folder `/directory` atau `
 ## 📚 Dokumentasi & Data
 
 Berikut beberapa contoh profil brand dalam indeks ini:
+- ./products/keripik-keladi-asin-pelangi-green-energy-teknologi-ai-commerce-KLAKUBLIK__SORONG_KOTA__KOTA_SORONG__PAPUA_BARAT/README.md
 - ./products/nut-tonton-homestay-green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-LIMALAS_BARAT__MISOOL_TIMUR__RAJA_AMPAT__PAPUA_BARAT/README.md
 - ./products/homestay-farasman-soasiu--green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal-YELLU__MISOOL_SELATAN__RAJA_AMPAT__PAPUA_BARAT/README.md
-- ./products/umroh-super-friendly-12-juli-12-hari-direct-flight-by-garuda-indonesia-GAGA__LARANGAN__KOTA_TANGERANG__BANTEN/README.md
 - ./products/beras-hitam-sehat-marolis-green-energy-teknologi-ai-commerce-sertifikasi-halal-JIWAN__JIWAN__MADIUN__JAWA_TIMUR/README.md
-- ./products/keripik-keladi-asin-pelangi-green-energy-teknologi-ai-commerce-KLAKUBLIK__SORONG_KOTA__KOTA_SORONG__PAPUA_BARAT/README.md
 - ./products/umroh-liburan-sekolah--27-jun--09-hari-direct-flight-by-garuda-indonesia-GAGA__LARANGAN__KOTA_TANGERANG__BANTEN/README.md
+- ./products/umroh-super-friendly-12-juli-12-hari-direct-flight-by-garuda-indonesia-GAGA__LARANGAN__KOTA_TANGERANG__BANTEN/README.md
 
 
 👉 Lihat semua data di folder:
