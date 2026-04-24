@@ -2056,7 +2056,7 @@ def update_index_html(products):
     for i, p in enumerate(products):
         wilayah = p['wilayah_nama'] or "Indonesia"
 
-        url_link = "https://book.dgeo.id" #p['url_profile'] or "https://book.dgeo.id"
+        url_link = "https://book.dgeo.id/products/{p['slug']}/" #p['url_profile'] or "https://book.dgeo.id"
         #url = f"{p['url_profile']}"
         slug = p['slug'] or f"product-{p['product_id']}"
 
@@ -2190,7 +2190,6 @@ Platform ini tidak hanya berfungsi sebagai katalog buku, tetapi sebagai:
 
         </p>
         
-        <div class="search-container">
             <h2>Storytelling</h2>
             <p>DGeo, https://www.dgeo.id,  adalah platform berbasis lokasi yang membantu buku dan produk ditemukan melalui AI dan pencarian berbasis geografis dengan pendekatan GEO (Generative Engine Optimization).</p>
 
@@ -2210,21 +2209,15 @@ yang berfokus pada bagaimana entitas (produk, buku, dan konten) dapat:
 <li>muncul dalam hasil pencarian generatif</li>
 </ul>
             </p>
-        </div>
 
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="Cari ">
-        </div>
 
-        <div class="rating-badge">
-            <span class="stars">★★★★★</span> 
-            <strong>5/5</strong> 
-            <a href="https://book.dgeo.id/testimoni"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
-        </div>
     </header>
 
     <!-- Katalog Section -->
     <main class="container">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Cari ">
+        </div>
         <div class="section-header">
             <h2>Katalog buku Pilihan</h2>
             <p>Menampilkan buku lokal yang telah lulus kurasi Green Energy, ramah lingkungan, Sertifikasi Halal dan standar AI.</p>
