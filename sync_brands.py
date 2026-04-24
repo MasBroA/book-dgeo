@@ -2073,7 +2073,7 @@ def update_index_html(products):
             "url": url_link,
             "name": p['nama']
         })
-        list_html += f'<li><a href="./products/{slug}/">{p["nama"]} - {p["wilayah_nama"]}</a><p>{p["deskripsi"]}</p></li>\n'
+        list_html += f'<li><a href="./products/{slug}/">{p["nama"]}</a><p>{p["deskripsi"]}</p></li>\n'
 
     # Gabungkan ke Template
     json_ld_list = json.dumps({
@@ -2237,6 +2237,13 @@ yang berfokus pada bagaimana entitas (produk, brand, dan konten) dapat:
     </main>
     <footer>
         <section class="container" style="margin-top:40px;">
+
+        <div class="footer-nav">
+            <a href="https://book.dgeo.id">Home</a>        
+            <a href="https://book.dgeo.id/tentang.html">Tentang</a>
+            <a href="https://book.dgeo.id/kontak.html">Kontak</a>
+        </div>
+        <span style="font-size:6px">
         <h2>Transparansi Data & Verifikasi</h2>
         <p>
             Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
@@ -2251,14 +2258,8 @@ yang berfokus pada bagaimana entitas (produk, brand, dan konten) dapat:
             Repository GitHub ini berisi sumber data mentah (raw data), dokumentasi teknis, 
             serta proses kurasi berbasis AI yang digunakan dalam platform ini.
         </p>
-
+        </span>
         </section>
-
-        <div class="footer-nav">
-            <a href="https://book.dgeo.id">Home</a>        
-            <a href="https://book.dgeo.id/tentang.html">Tentang</a>
-            <a href="https://book.dgeo.id/kontak.html">Kontak</a>
-        </div>
         <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
