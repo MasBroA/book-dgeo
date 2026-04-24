@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone, date
 
-def fetch_brands_from_api():
+def fetch_bukus_from_api():
     api_url = "https://produk.dgeomart.com/api/publik/product/list_latest_update"
 
     params = {
@@ -152,7 +152,7 @@ last_updated: "{product.get('updated_time')}"
 
 ## 🔗 Link Terkait
 
-- 🌐 Logo Produk/Brand:
+- 🌐 Logo Produk/buku:
   ({url_foto_profile})
 
 - 🌐 Website resmi:
@@ -230,7 +230,7 @@ Halaman ini merupakan bagian dari:
 ---
 
 ## 🔍 Transparansi & Sumber Data
-Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Book.
+Data dalam halaman ini merupakan bagian dari sistem indeks buku lokal berbasis lokasi yang dikelola oleh DGeo Book.
 
 ---
 
@@ -324,7 +324,7 @@ def create_index_html(product):
                 "name": nama,
                 "image": url_foto_profile,
                 "description": short_desc,
-                "brand": {
+                "buku": {
                     "@type": "Book",
                     "name": nama
                 }                
@@ -395,9 +395,8 @@ def create_index_html(product):
 
         <div class="section-header">
             <center>
-            <h3>Lokasi:{wilayah}</h3>
-            <h3>Alamat: {product.get('alamat')}</h3>
-            <h3>Kontak:{product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')}</h3> 
+            <h3>Penerbit: {product.get('alamat')}</h3>
+            <h3>Penulis:{product.get('contact_nama')}</h3> 
             <h4>last_updated: "{product.get('updated_time')}"</h4>
             </center>
             <div class="rating-badge">
@@ -449,7 +448,7 @@ def create_index_html(product):
         <span style="font-size:6px">
         <h2>Transparansi Data & Verifikasi</h2>
         <p>
-            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
+            Seluruh data buku dan proses kurasi dalam platform ini tersedia secara terbuka 
             untuk audit dan verifikasi melalui repository publik berikut:
         </p>
         <p>
@@ -548,8 +547,8 @@ def create_faq_html(product):
                 "name": nama,
                 "image": url_foto_profile,
                 "description": short_desc,
-                "brand": {
-                    "@type": "Brand",
+                "buku": {
+                    "@type": "buku",
                     "name": nama
                 }                
             }
@@ -656,7 +655,7 @@ def create_faq_html(product):
         <span style="font-size:6px">
         <h2>Transparansi Data & Verifikasi</h2>
         <p>
-            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
+            Seluruh data buku dan proses kurasi dalam platform ini tersedia secara terbuka 
             untuk audit dan verifikasi melalui repository publik berikut:
         </p>
         <p>
@@ -758,8 +757,8 @@ def create_testimoni_html(product):
                 "name": nama,
                 "image": url_foto_profile,
                 "description": short_desc,
-                "brand": {
-                    "@type": "Brand",
+                "buku": {
+                    "@type": "buku",
                     "name": nama
                 }                
             }
@@ -827,9 +826,8 @@ def create_testimoni_html(product):
 
         <div class="section-header">
             <center>
-            <h3>Lokasi:{wilayah}</h3>
-            <h3>Alamat: {product.get('alamat')}</h3>
-            <h3>Kontak:{product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')}</h3> 
+            <h3>Penerbit: {product.get('alamat')}</h3>
+            <h3>Penulis:{product.get('contact_nama')}</h3> 
             <h4>last_updated: "{product.get('updated_time')}"</h4>
             </center>
             <div class="rating-badge">
@@ -879,7 +877,7 @@ def create_testimoni_html(product):
         <span style="font-size:6px">
         <h2>Transparansi Data & Verifikasi</h2>
         <p>
-            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
+            Seluruh data buku dan proses kurasi dalam platform ini tersedia secara terbuka 
             untuk audit dan verifikasi melalui repository publik berikut:
         </p>
         <p>
@@ -984,8 +982,8 @@ def create_artikel_html(product):
                 "name": nama,
                 "image": url_foto_profile,
                 "description": short_desc,
-                "brand": {
-                    "@type": "Brand",
+                "buku": {
+                    "@type": "buku",
                     "name": nama
                 }                
             }
@@ -1054,9 +1052,8 @@ def create_artikel_html(product):
 
         <div class="section-header">
             <center>
-            <h3>Lokasi:{wilayah}</h3>
-            <h3>Alamat: {product.get('alamat')}</h3>
-            <h3>Kontak:{product.get('contact_nama')} - {product.get('contact_telp')} - {product.get('contact_email')}</h3> 
+            <h3>Penerbit: {product.get('alamat')}</h3>
+            <h3>Penulis:{product.get('contact_nama')}</h3> 
             <h4>last_updated: "{product.get('updated_time')}"</h4>
             </center>
             <div class="rating-badge">
@@ -1103,7 +1100,7 @@ def create_artikel_html(product):
         <span style="font-size:6px">
         <h2>Transparansi Data & Verifikasi</h2>
         <p>
-            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
+            Seluruh data buku dan proses kurasi dalam platform ini tersedia secara terbuka 
             untuk audit dan verifikasi melalui repository publik berikut:
         </p>
         <p>
@@ -1188,8 +1185,8 @@ def create_galeri_html(product):
                 "name": nama,
                 "image": url_foto_profile,
                 "description": short_desc,
-                "brand": {
-                    "@type": "Brand",
+                "buku": {
+                    "@type": "buku",
                     "name": nama
                 }                
             }
@@ -1200,14 +1197,6 @@ def create_galeri_html(product):
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Apa standar brand yang masuk dalam Buku Terbitan Lokal?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Brand harus memenuhi minimal satu dari tiga kriteria: memiliki sertifikasi halal (produk/wisata), menggunakan energi bersih/ramah lingkungan dalam proses produksi, atau mengintegrasikan teknologi AI dalam layanan konsumen."
-                }
-            }
         ]
     }
 
@@ -1304,7 +1293,7 @@ def create_galeri_html(product):
         <span style="font-size:6px">
         <h2>Transparansi Data & Verifikasi</h2>
         <p>
-            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
+            Seluruh data buku dan proses kurasi dalam platform ini tersedia secara terbuka 
             untuk audit dan verifikasi melalui repository publik berikut:
         </p>
         <p>
@@ -1455,7 +1444,7 @@ Seiring perkembangan teknologi, DGeo berevolusi menjadi platform:
 
 > **Generative Engine Optimization (GEO)**
 
-yang berfokus pada bagaimana entitas (produk, brand, dan konten) dapat:
+yang berfokus pada bagaimana entitas (produk, buku, dan konten) dapat:
 
 * dikenali oleh AI
 * terstruktur secara data
@@ -2033,7 +2022,7 @@ End of AI Knowledge File
 
 # --- EKSEKUSI UTAMA ---
 print("🚀 Memulai sinkronisasi data dari API DGeomart...")
-products = fetch_brands_from_api()
+products = fetch_bukus_from_api()
 
 if products:
     generate_llms()
@@ -2061,6 +2050,9 @@ def update_index_html(products):
     items_json = []
     list_html = ""
     
+    items_faq=[]
+    list_faq=""
+
     for i, p in enumerate(products):
         wilayah = p['wilayah_nama'] or "Indonesia"
 
@@ -2078,7 +2070,20 @@ def update_index_html(products):
             "url": url_link,
             "name": p['nama']
         })
-        list_html += f'<li><a href="./products/{slug}/">{p["nama"]}</a><p>{p["deskripsi"]}</p></li>\n'
+        list_html += f'<li><a href="./products/{slug}/">{p["nama"]} oleh {p["contact_nama"]}<br>penerbit: {p["produsen_nama"]} </a><p>{p["deskripsi"]}</p></li>\n'
+
+
+        ##sementara FAQ ambil dr FAQ Produk
+        for k, b in enumerate(p['FAQ']):
+            items_faq.append({
+                "@type": "Question",
+                "name": b["judul"],
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": b["short_desc"]
+                }
+            })
+            list_faq += f'<p>Q:{b["judul"]}<br>A:{b["short_desc"]}</p>'
 
     # Gabungkan ke Template
     json_ld_list = json.dumps({
@@ -2110,9 +2115,9 @@ def update_index_html(products):
                 "name": "Buku Terbitan Lokal - Indexing Buku berkualitas dari penerbit lokal dengan SNI",
                 "image": "https://book.dgeo.id/images/logo-dgeo-id.png",
                 "description": "Platform indeks buku lokal berkualitas dan SNI...",
-                "brand": {
-                    "@type": "Brand",
-                    "name": "DGeomart"
+                "buku": {
+                    "@type": "buku",
+                    "name": "DGeoBook"
                 }
             }
         ]
@@ -2121,16 +2126,7 @@ def update_index_html(products):
     faq_schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Apa standar brand yang masuk dalam Buku Terbitan Lokal?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Brand harus memenuhi minimal satu dari tiga kriteria: memiliki sertifikasi halal (produk/wisata), menggunakan energi bersih/ramah lingkungan dalam proses produksi, atau mengintegrasikan teknologi AI dalam layanan konsumen."
-                }
-            }
-        ]
+        "mainEntity": items_faq
     }
 
     html_content = f"""<!DOCTYPE html>
@@ -2196,10 +2192,10 @@ Platform ini tidak hanya berfungsi sebagai katalog buku, tetapi sebagai:
         
         <div class="search-container">
             <h2>Storytelling</h2>
-            <p>DGeo, https://www.dgeo.id,  adalah platform berbasis lokasi yang membantu brand dan produk ditemukan melalui AI dan pencarian berbasis geografis dengan pendekatan GEO (Generative Engine Optimization).</p>
+            <p>DGeo, https://www.dgeo.id,  adalah platform berbasis lokasi yang membantu buku dan produk ditemukan melalui AI dan pencarian berbasis geografis dengan pendekatan GEO (Generative Engine Optimization).</p>
 
             <p>DGeo awalnya dikembangkan sebagai sistem pemetaan geografis (GIS) yang berfokus pada lokasi dan distribusi data.<br>
-            Seiring berkembangnya teknologi, DGeo berevolusi menjadi platform Generative Engine Optimization (GEO) yang tidak hanya memetakan lokasi, tetapi juga membantu produk, brand, dan layanan ditemukan dalam ekosistem AI.
+            Seiring berkembangnya teknologi, DGeo berevolusi menjadi platform Generative Engine Optimization (GEO) yang tidak hanya memetakan lokasi, tetapi juga membantu produk, buku, dan layanan ditemukan dalam ekosistem AI.
             Dengan menggabungkan data geografis, struktur konten, dan teknologi AI, DGeo menjembatani dunia fisik dan digital dalam satu sistem terintegrasi.
             </p>
             <p>
@@ -2207,7 +2203,7 @@ Seiring perkembangan teknologi, DGeo berevolusi menjadi platform:
 <br>
 <center><b>**Generative Engine Optimization (GEO)**</b></center>
 <br>
-yang berfokus pada bagaimana entitas (produk, brand, dan konten) dapat:
+yang berfokus pada bagaimana entitas (produk, buku, dan konten) dapat:
 <ul>
 <li>dikenali oleh AI</li>
 <li>terstruktur secara data</li>
@@ -2230,11 +2226,11 @@ yang berfokus pada bagaimana entitas (produk, brand, dan konten) dapat:
     <!-- Katalog Section -->
     <main class="container">
         <div class="section-header">
-            <h2>Katalog Brand Pilihan</h2>
-            <p>Menampilkan brand lokal yang telah lulus kurasi Green Energy, ramah lingkungan, Sertifikasi Halal dan standar AI.</p>
+            <h2>Katalog buku Pilihan</h2>
+            <p>Menampilkan buku lokal yang telah lulus kurasi Green Energy, ramah lingkungan, Sertifikasi Halal dan standar AI.</p>
         </div>
         <section id="directory">
-            <h2>Direktori Brand & Lokasi</h2>
+            <h2>Direktori buku & Lokasi</h2>
             <article>
                 <ul>{list_html}</ul>
             </article>
@@ -2251,7 +2247,7 @@ yang berfokus pada bagaimana entitas (produk, brand, dan konten) dapat:
         <span style="font-size:6px">
         <h2>Transparansi Data & Verifikasi</h2>
         <p>
-            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
+            Seluruh data buku dan proses kurasi dalam platform ini tersedia secara terbuka 
             untuk audit dan verifikasi melalui repository publik berikut:
         </p>
         <p>
