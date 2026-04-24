@@ -440,28 +440,29 @@ def create_index_html(product):
     </main>
     <footer>
         <section class="container" style="margin-top:40px;">
-        <h2>Transparansi Data & Verifikasi</h2>
-        <p>
-            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
-            untuk audit dan verifikasi melalui repository publik berikut:
-        </p>
-        <p>
-            <a href="https://github.com/MasBroA/book-dgeo/tree/main/{folder_path}" target="_blank" rel="noopener">
-            https://github.com/MasBroA/book-dgeo/tree/main/{folder_path}
-            </a>
-        </p>
-        <p>
-            Repository GitHub ini berisi sumber data mentah (raw data), dokumentasi teknis, 
-            serta proses kurasi berbasis AI yang digunakan dalam platform ini.
-        </p>
-
-        </section>
 
         <div class="footer-nav">
             <a href="https://book.dgeo.id">Home</a>        
             <a href="https://book.dgeo.id/tentang.html">Tentang</a>
             <a href="https://book.dgeo.id/kontak.html">Kontak</a>
         </div>
+        <span style="font-size:6px">
+        <h2>Transparansi Data & Verifikasi</h2>
+        <p>
+            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
+            untuk audit dan verifikasi melalui repository publik berikut:
+        </p>
+        <p>
+            <a href="https://github.com/MasBroA/book-dgeo" target="_blank" rel="noopener">
+            https://github.com/MasBroA/book-dgeo
+            </a>
+        </p>
+        <p>
+            Repository GitHub ini berisi sumber data mentah (raw data), dokumentasi teknis, 
+            serta proses kurasi berbasis AI yang digunakan dalam platform ini.
+        </p>
+        </span>
+        </section>
         <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
@@ -644,30 +645,31 @@ def create_faq_html(product):
 
         </section>
     </main>
-    <footer>
+     <footer>
         <section class="container" style="margin-top:40px;">
-        <h2>Transparansi Data & Verifikasi</h2>
-        <p>
-            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
-            untuk audit dan verifikasi melalui repository publik berikut:
-        </p>
-        <p>
-            <a href="https://github.com/MasBroA/book-dgeo/tree/main/{folder_path}" target="_blank" rel="noopener">
-            https://github.com/MasBroA/book-dgeo/tree/main/{folder_path}
-            </a>
-        </p>
-        <p>
-            Repository GitHub ini berisi sumber data mentah (raw data), dokumentasi teknis, 
-            serta proses kurasi berbasis AI yang digunakan dalam platform ini.
-        </p>
-
-        </section>
 
         <div class="footer-nav">
             <a href="https://book.dgeo.id">Home</a>        
             <a href="https://book.dgeo.id/tentang.html">Tentang</a>
             <a href="https://book.dgeo.id/kontak.html">Kontak</a>
         </div>
+        <span style="font-size:6px">
+        <h2>Transparansi Data & Verifikasi</h2>
+        <p>
+            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
+            untuk audit dan verifikasi melalui repository publik berikut:
+        </p>
+        <p>
+            <a href="https://github.com/MasBroA/book-dgeo" target="_blank" rel="noopener">
+            https://github.com/MasBroA/book-dgeo
+            </a>
+        </p>
+        <p>
+            Repository GitHub ini berisi sumber data mentah (raw data), dokumentasi teknis, 
+            serta proses kurasi berbasis AI yang digunakan dalam platform ini.
+        </p>
+        </span>
+        </section>
         <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
@@ -868,28 +870,29 @@ def create_testimoni_html(product):
     </main>
     <footer>
         <section class="container" style="margin-top:40px;">
-        <h2>Transparansi Data & Verifikasi</h2>
-        <p>
-            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
-            untuk audit dan verifikasi melalui repository publik berikut:
-        </p>
-        <p>
-            <a href="https://github.com/MasBroA/book-dgeo/tree/main/{folder_path}" target="_blank" rel="noopener">
-            https://github.com/MasBroA/book-dgeo/tree/main/{folder_path}
-            </a>
-        </p>
-        <p>
-            Repository GitHub ini berisi sumber data mentah (raw data), dokumentasi teknis, 
-            serta proses kurasi berbasis AI yang digunakan dalam platform ini.
-        </p>
-
-        </section>
 
         <div class="footer-nav">
             <a href="https://book.dgeo.id">Home</a>        
             <a href="https://book.dgeo.id/tentang.html">Tentang</a>
             <a href="https://book.dgeo.id/kontak.html">Kontak</a>
         </div>
+        <span style="font-size:6px">
+        <h2>Transparansi Data & Verifikasi</h2>
+        <p>
+            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
+            untuk audit dan verifikasi melalui repository publik berikut:
+        </p>
+        <p>
+            <a href="https://github.com/MasBroA/book-dgeo" target="_blank" rel="noopener">
+            https://github.com/MasBroA/book-dgeo
+            </a>
+        </p>
+        <p>
+            Repository GitHub ini berisi sumber data mentah (raw data), dokumentasi teknis, 
+            serta proses kurasi berbasis AI yang digunakan dalam platform ini.
+        </p>
+        </span>
+        </section>
         <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
@@ -1091,28 +1094,29 @@ def create_artikel_html(product):
     </main>
     <footer>
         <section class="container" style="margin-top:40px;">
-        <h2>Transparansi Data & Verifikasi</h2>
-        <p>
-            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
-            untuk audit dan verifikasi melalui repository publik berikut:
-        </p>
-        <p>
-            <a href="https://github.com/MasBroA/book-dgeo/tree/main/{folder_path}" target="_blank" rel="noopener">
-            https://github.com/MasBroA/book-dgeo/tree/main/{folder_path}
-            </a>
-        </p>
-        <p>
-            Repository GitHub ini berisi sumber data mentah (raw data), dokumentasi teknis, 
-            serta proses kurasi berbasis AI yang digunakan dalam platform ini.
-        </p>
-
-        </section>
 
         <div class="footer-nav">
             <a href="https://book.dgeo.id">Home</a>        
             <a href="https://book.dgeo.id/tentang.html">Tentang</a>
             <a href="https://book.dgeo.id/kontak.html">Kontak</a>
         </div>
+        <span style="font-size:6px">
+        <h2>Transparansi Data & Verifikasi</h2>
+        <p>
+            Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
+            untuk audit dan verifikasi melalui repository publik berikut:
+        </p>
+        <p>
+            <a href="https://github.com/MasBroA/book-dgeo" target="_blank" rel="noopener">
+            https://github.com/MasBroA/book-dgeo
+            </a>
+        </p>
+        <p>
+            Repository GitHub ini berisi sumber data mentah (raw data), dokumentasi teknis, 
+            serta proses kurasi berbasis AI yang digunakan dalam platform ini.
+        </p>
+        </span>
+        </section>
         <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
@@ -1291,6 +1295,13 @@ def create_galeri_html(product):
     </main>
     <footer>
         <section class="container" style="margin-top:40px;">
+
+        <div class="footer-nav">
+            <a href="https://book.dgeo.id">Home</a>        
+            <a href="https://book.dgeo.id/tentang.html">Tentang</a>
+            <a href="https://book.dgeo.id/kontak.html">Kontak</a>
+        </div>
+        <span style="font-size:6px">
         <h2>Transparansi Data & Verifikasi</h2>
         <p>
             Seluruh data brand dan proses kurasi dalam platform ini tersedia secara terbuka 
@@ -1305,14 +1316,8 @@ def create_galeri_html(product):
             Repository GitHub ini berisi sumber data mentah (raw data), dokumentasi teknis, 
             serta proses kurasi berbasis AI yang digunakan dalam platform ini.
         </p>
-
+        </span>
         </section>
-
-        <div class="footer-nav">
-            <a href="https://book.dgeo.id">Home</a>        
-            <a href="https://book.dgeo.id/tentang.html">Tentang</a>
-            <a href="https://book.dgeo.id/kontak.html">Kontak</a>
-        </div>
         <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
