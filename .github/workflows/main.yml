@@ -7,6 +7,9 @@ on:
     - cron: '0 * * * *' # Menjalankan otomatis setiap jam (opsional)
   workflow_dispatch: # Memungkinkan kamu menjalankan manual dari tab Actions
 
+permissions:
+  contents: write   # ← INI YANG KURANG
+
 jobs:
   build:
     runs-on: ubuntu-latest
