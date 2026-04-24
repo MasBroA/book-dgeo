@@ -18,7 +18,7 @@ Sehingga para konsumen, distributor, reseller dapat melakukan komunikasi dengan 
 Homestay Farasman Soasiu telah memperoleh sertifikasi wisata halal dari MUI Untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikasi wisata  halal dari  Homestay Farasman Soasiu  , silakan kunjungi web page :
 https://www.dgeomart.com/cbm/product/tld2111181226488881288
 
-Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io/Lokal-Brand-Index/index.html">kembali</a>",
+Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io/book-dgeo/index.html">kembali</a>",
   "url": "https://produk.dgeomart.com/publik/product/slug/homestay-farasman-soasiu--green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal",
   "image": "https://produk.dgeomart.com/upload/profile/1775200995_Farasman_Soasiu_Homestay.jpg",
   "address": {
@@ -54,7 +54,7 @@ Homestay Farasman Soasiu telah memperoleh sertifikasi wisata halal dari MUI
 Untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikasi wisata  halal dari  Homestay Farasman Soasiu  , silakan kunjungi web page :
 https://www.dgeomart.com/cbm/product/tld2111181226488881288
 
-Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io/Lokal-Brand-Index/index.html">kembali</a>
+Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io/book-dgeo/index.html">kembali</a>
 
 
 ---

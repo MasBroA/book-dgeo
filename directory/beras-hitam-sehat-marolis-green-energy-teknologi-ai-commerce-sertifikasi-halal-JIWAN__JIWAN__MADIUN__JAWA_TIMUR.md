@@ -18,7 +18,7 @@ Sehingga para konsumen, distributor, reseller dapat melakukan komunikasi dengan 
 Beras Hitam Sehat Marolis  telah memperoleh sertifikasi halal dari MUI Untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikasi produk halal dari produk Beras Hitam Sehat Marolis , silakan kunjungi web page :
 https://www.dgeomart.com/cbm/product/beras_hitam_marolis
 
-Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/Lokal-Brand-Index/index.html">kembali</a>",
+Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/book-dgeo/index.html">kembali</a>",
   "url": "https://produk.dgeomart.com/publik/product/slug/beras-hitam-sehat-marolis-green-energy-teknologi-ai-commerce-sertifikasi-halal",
   "image": "https://produk.dgeomart.com/upload/profile/1775200697_beras_merah_sehat.jpeg",
   "address": {
@@ -54,7 +54,7 @@ Beras Hitam Sehat Marolis  telah memperoleh sertifikasi halal dari MUI
 Untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikasi produk halal dari produk Beras Hitam Sehat Marolis , silakan kunjungi web page :
 https://www.dgeomart.com/cbm/product/beras_hitam_marolis
 
-Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/Lokal-Brand-Index/index.html">kembali</a>
+Untuk informasi produk lain silakan klik <a href="https://masbroa.github.io/book-dgeo/index.html">kembali</a>
 
 
 ---

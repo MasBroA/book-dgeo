@@ -5,7 +5,7 @@
   "description_for_model": "Index of local Indonesian brands with precise geo-coordinates (lat/long) for location-based product discovery.",
   "description_for_human": "Temukan lokasi brand lokal Indonesia secara presisi.",
   "auth": { "type": "none" },
-  "api": { "type": "openapi", "url": "https://masbroa.github.io/Lokal-Brand-Index/" },
+  "api": { "type": "openapi", "url": "https://masbroa.github.io/book-dgeo/" },
   "logo_url": "https://www.dgeomart.com",
   "contact_email": "agus@agusromadi.com"
 }

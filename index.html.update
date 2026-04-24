@@ -7,14 +7,14 @@
     
     <!-- Meta Dasar untuk AI -->
     <meta name="description" content="Indeks Brand Lokal Indonesia dengan metadata koordinat geografis (GEO) untuk optimasi penemuan produk UMKM oleh Large Language Models (LLM).">
-    <link rel="canonical" href="https://masbroa.github.io/Lokal-Brand-Index/">
+    <link rel="canonical" href="https://masbroa.github.io/book-dgeo/">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Buku Terbitan Lokal - DGeomart">
     <meta property="og:description" content="Direktori terstruktur brand lokal Indonesia yang dioptimalkan untuk mesin pencari AI.">
-    <meta property="og:url" content="https://masbroa.github.io/Lokal-Brand-Index/">
+    <meta property="og:url" content="https://masbroa.github.io/book-dgeo/">
 
     <!-- SKEMA DATASET (Sangat disukai AI untuk Indeks Data) -->
     <script type="application/ld+json">
@@ -23,7 +23,7 @@
       "@type": "Dataset",
       "name": "Indeks Lokasi Brand Lokal Indonesia",
       "description": "Koleksi data terstruktur lokasi brand lokal UMKM Indonesia untuk optimasi GEO.",
-      "url": "https://masbroa.github.io/Lokal-Brand-Index/",
+      "url": "https://masbroa.github.io/book-dgeo/",
       "license": "https://creativecommons.org",
       "creator": {
         "@type": "Organization",

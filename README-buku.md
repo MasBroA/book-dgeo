@@ -1,56 +1,59 @@
-# 📚 {{judul_buku}}
+# 📚 {nama}
 
-> {{tagline_buku}}
+> {product.get('tagline')}
 
 ---
 
 ## 🧠 Ringkasan
 
-{{deskripsi_singkat_buku}}
+{product.get('deskripsi')}
 
+{product.get('note')}
 ---
 
 ## ✍️ Detail Buku
 
 | Atribut      | Informasi          |
 | ------------ | ------------------ |
-| Judul        | {{judul_buku}}     |
-| Penulis      | {{penulis}}        |
-| Penerbit     | {{penerbit}}       |
-| Tahun Terbit | {{tahun_terbit}}   |
-| ISBN         | {{isbn}}           |
-| Halaman      | {{jumlah_halaman}} |
-| Bahasa       | {{bahasa}}         |
+| Judul        | {product.get('nama')}     |
+| Penulis      | {product.get('contact_nama')}        |
+| Penerbit     | {product.get('produsen_nama')}       |
+| Tahun Terbit | {product.get('mulai')}   |
+| ISBN         | {product.get('kode')}           |
+| Halaman      | {product.get('qty')} |
+| Bahasa       | {product.get('unit')}         |
 
 ---
 
 ## 🏢 Penerbit
 
-**{{penerbit}}** merupakan penerbit lokal yang berbasis di:
+**{product.get('produsen_nama')}** merupakan penerbit lokal yang berbasis di:
 
-📍 {{kota}}, {{provinsi}}, Indonesia
+📍 {product.get('produsen_alamat')}
 
-Fokus:
-{{deskripsi_penerbit}}
+- Telepon: {product.get('produsen_telp')}
+- Email: {product.get('produsen_email')}
+
+last_updated: "{product.get('updated_time')}"
 
 ---
 
-## 📖 Deskripsi
+## 🔗 Link Terkait
 
-{{deskripsi_panjang_buku}}
+- 🌐 Logo Produk/Brand:
+  ({url_foto_profile})
+
+- 🌐 Website resmi:
+  ({url_link})
+
+- 📄 Halaman produk:
+  https://book.dgeo.id/{directory}/{slug}-{wilayah_name}/
 
 ---
 
 ## 🧩 Topik
 
-{{kategori_1}}, {{kategori_2}}, {{kategori_3}}
-
----
-
-## 🔗 Rekomendasi Terkait
-
-* {{buku_terkait_1}}
-* {{buku_terkait_2}}
+{product.get('kategori')}
 
 ---
 
@@ -76,90 +79,16 @@ Halaman ini disusun untuk mendukung:
 
 ## 🧾 Structured Data (Schema.org)
 
-```json id="p2k9zs"
-{
-  "@context": "https://schema.org",
-  "@graph": [
-
-    {
-      "@type": "Book",
-      "@id": "{{url_buku}}#book",
-      "name": "{{judul_buku}}",
-      "description": "{{deskripsi_singkat_buku}}",
-      "inLanguage": "{{bahasa}}",
-      "isbn": "{{isbn}}",
-      "numberOfPages": {{jumlah_halaman}},
-      "datePublished": "{{tahun_terbit}}",
-
-      "author": {
-        "@type": "Person",
-        "name": "{{penulis}}"
-      },
-
-      "publisher": {
-        "@id": "{{url_penerbit}}#org"
-      },
-
-      "genre": [
-        "{{kategori_1}}",
-        "{{kategori_2}}"
-      ],
-
-      "keywords": [
-        "{{keyword_1}}",
-        "{{keyword_2}}",
-        "{{keyword_3}}"
-      ],
-
-      "contentLocation": {
-        "@type": "Place",
-        "name": "{{kota}}",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "{{kota}}",
-          "addressRegion": "{{provinsi}}",
-          "addressCountry": "ID"
-        }
-      },
-
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "{{url_buku}}"
-      }
-    },
-
-    {
-      "@type": "Organization",
-      "@id": "{{url_penerbit}}#org",
-      "name": "{{penerbit}}",
-      "url": "{{website_penerbit}}",
-
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "{{kota}}",
-        "addressRegion": "{{provinsi}}",
-        "addressCountry": "ID"
-      }
-    }
-
-  ]
-}
-```
+{json_ld}
 
 ---
 
 ## 🔍 Kata Kunci
 
-{{keyword_1}}, {{keyword_2}}, {{keyword_3}}, {{keyword_4}}
+{product.get('keyword')}
 
 ---
 
-## 🔗 Referensi
-
-* Halaman: {{url_buku}}
-* Penerbit: {{website_penerbit}}
-
----
 
 ## ✨ Tentang Halaman Ini
 
@@ -169,3 +98,29 @@ Halaman ini merupakan bagian dari:
 → Direktori buku penerbit lokal Indonesia berbasis AI & Knowledge Graph
 
 ---
+
+---
+## FAQ
+{list_faq}
+
+---
+## Artikel Terkait
+{list_artikel}
+
+---
+## Testimoni
+{list_testimoni}
+
+---
+- 🔙 Kembali ke indeks:
+  https://book.dgeo.id
+
+---
+
+## 🔍 Transparansi & Sumber Data
+Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Book.
+
+---
+
+## 🧭 Lihat juga
+- [Indeks utama](/README.md)

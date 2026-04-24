@@ -80,7 +80,7 @@ Allow: /
 # Crawl-delay: 1
 
 # 5) Sitemaps (use your canonical host)
-Sitemap: https://masbroa.github.io/Lokal-Brand-Index/sitemap.xml
+Sitemap: https://masbroa.github.io/book-dgeo/sitemap.xml
 
 # If you have additional sitemaps, list them too:
 # Sitemap: https://www.example.com/sitemap-products.xml

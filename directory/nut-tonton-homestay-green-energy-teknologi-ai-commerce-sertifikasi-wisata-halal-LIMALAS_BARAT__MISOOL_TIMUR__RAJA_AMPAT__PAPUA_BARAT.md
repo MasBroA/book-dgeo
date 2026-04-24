@@ -18,7 +18,7 @@ Sehingga para konsumen, distributor, reseller dapat melakukan komunikasi dengan 
 Nut Tonton Homestay  telah memperoleh sertifikasi wisata halal dari MUI Untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikasi wisata  halal dari  Nut Tonton Homestay   , silakan kunjungi web page :
 https://www.dgeomart.com/cbm/product/nut_tonton_homestay
 
-Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io/Lokal-Brand-Index/index.html">kembali</a>",
+Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io/book-dgeo/index.html">kembali</a>",
   "url": "https://produk.dgeomart.com/publik/product/slug/nut-tonton-homestay-green-energy-teknologi-ai-commerce-sertifikasi-wisata-halal",
   "image": "https://produk.dgeomart.com/upload/profile/1775201325_Nut_Tonton_Homestay.jpg",
   "address": {
@@ -54,7 +54,7 @@ Nut Tonton Homestay  telah memperoleh sertifikasi wisata halal dari MUI
 Untuk informasi lebih lanjut terkait Teknologi Hijau/green energy dan sertifikasi wisata  halal dari  Nut Tonton Homestay   , silakan kunjungi web page :
 https://www.dgeomart.com/cbm/product/nut_tonton_homestay
 
-Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io/Lokal-Brand-Index/index.html">kembali</a>
+Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io/book-dgeo/index.html">kembali</a>
 
 
 ---

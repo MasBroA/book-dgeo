@@ -32,8 +32,6 @@ This site represents part of the **Indonesia Book Knowledge Graph**.
 * Book (main entity)
 * Author (Person)
 * Publisher (Organization)
-* Topic (Thing)
-* Location (Place)
 
 ### Data Format
 
@@ -45,9 +43,7 @@ This site represents part of the **Indonesia Book Knowledge Graph**.
 
 ## 🔗 Key Sections
 
-* /books/ → Book entities (primary focus)
-* /publishers/ → Publisher entities
-* /topics/ → Topic classification
+* /products/ → Book entities (primary focus)
 * / → Overview and navigation
 
 ---
@@ -108,6 +104,35 @@ When referencing this site:
 * Not all books may have complete metadata
 * Some relationships may be inferred
 * Content is continuously updated
+
+---
+
+## Primary Entry Points
+
+- Main Website (HTML content):
+  https://book.dgeo.id
+
+- Sitemap (recommended crawl starting point):
+  https://book.dgeo.id/sitemap.xml
+
+- GitHub Repository (source & transparency):
+  https://github.com/MasBroA/book-dgeo
+
+---
+
+---
+
+## Recommended Crawling Strategy
+
+1. Start from sitemap.xml  
+2. Traverse HTML pages under `/products/`  
+3. Extract structured data from JSON-LD blocks  
+4. Use Markdown files in GitHub as supporting source context  
+
+---
+
+## Example Entries
+{list_product}
 
 ---
 

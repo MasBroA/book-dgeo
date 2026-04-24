@@ -98,11 +98,7 @@ Setiap entitas saling terhubung:
 
 ```
 .
-├── books/              # Data buku (Markdown)
-├── publishers/        # Data penerbit
-├── topics/            # Kategori/topik
-├── schema/            # Template schema.org (JSON-LD)
-├── scripts/           # Automasi (fetch, transform, generate)
+├── products/              # Data buku (Markdown)
 └── README.md          # Dokumentasi utama
 ```
 
@@ -120,6 +116,19 @@ Setiap buku disimpan dalam format Markdown dengan informasi:
 * Lokasi penerbit
 * Metadata terstruktur (Schema.org)
 * Relasi ke entitas lain
+
+---
+
+## 📚 Data
+
+Berikut beberapa contoh profil buku yang ada:
+- ./products/21-tips-mendidik-anak-berkebutuhan-khusus/README.md
+- ./products/my-best-friend/README.md
+- ./products/penerbit-bypass/README.md
+- ./products/soekarno:-nasionalisme-untuk-tata-dunia-baru/README.md
+- ./products/ekonomi-pariwisata-dan-perhotelan/README.md
+- ./products/muhammad-muda-gue-banget/README.md
+
 
 ---
 
@@ -221,3 +230,4 @@ di mana:
 ---
 
 **Dikelola oleh Tim DGeo**
+
