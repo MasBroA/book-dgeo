@@ -44,7 +44,7 @@ last_updated: "2026-04-24 13:51:46"
 
 ## 🔗 Link Terkait
 
-- 🌐 Logo Produk/Brand:
+- 🌐 Logo Produk/buku:
   (https://produk.dgeomart.com/upload/profile/1777013506_My Best Friend.jpeg)
 
 - 🌐 Website resmi:
@@ -158,7 +158,7 @@ Siti Badriah, Penyanyi,
 ---
 
 ## 🔍 Transparansi & Sumber Data
-Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Book.
+Data dalam halaman ini merupakan bagian dari sistem indeks buku lokal berbasis lokasi yang dikelola oleh DGeo Book.
 
 ---
 

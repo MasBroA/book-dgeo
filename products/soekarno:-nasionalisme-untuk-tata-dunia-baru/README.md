@@ -46,7 +46,7 @@ last_updated: "2026-04-24 14:35:04"
 
 ## 🔗 Link Terkait
 
-- 🌐 Logo Produk/Brand:
+- 🌐 Logo Produk/buku:
   (https://produk.dgeomart.com/upload/profile/1777013741_Soekarno.png)
 
 - 🌐 Website resmi:
@@ -165,7 +165,7 @@ Nia Sjarifudin, Ketua Aliansi Nasional Bhinneka Tunggal Ika/ANBTI,
 ---
 
 ## 🔍 Transparansi & Sumber Data
-Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Book.
+Data dalam halaman ini merupakan bagian dari sistem indeks buku lokal berbasis lokasi yang dikelola oleh DGeo Book.
 
 ---
 

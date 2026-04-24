@@ -52,7 +52,7 @@ last_updated: "2026-04-24 14:34:57"
 
 ## 🔗 Link Terkait
 
-- 🌐 Logo Produk/Brand:
+- 🌐 Logo Produk/buku:
   (https://produk.dgeomart.com/upload/profile/1777015774_bypas.png)
 
 - 🌐 Website resmi:
@@ -190,7 +190,7 @@ Dari sisi bahasa penyajian, naskah juga disederhanakan menjadi lebih ringan, men
 ---
 
 ## 🔍 Transparansi & Sumber Data
-Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Book.
+Data dalam halaman ini merupakan bagian dari sistem indeks buku lokal berbasis lokasi yang dikelola oleh DGeo Book.
 
 ---
 

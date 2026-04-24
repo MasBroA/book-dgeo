@@ -49,7 +49,7 @@ last_updated: "2026-04-24 14:35:21"
 
 ## 🔗 Link Terkait
 
-- 🌐 Logo Produk/Brand:
+- 🌐 Logo Produk/buku:
   (https://produk.dgeomart.com/upload/profile/1777013002_Ekonomi Pariwisata dan Perhotelan.jpeg)
 
 - 🌐 Website resmi:
@@ -163,7 +163,7 @@ Dr. Rodame Monitorir Napitupulu, SP, MM, Dosen di Fakultas Ekonomi dan Bisnis Is
 ---
 
 ## 🔍 Transparansi & Sumber Data
-Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Book.
+Data dalam halaman ini merupakan bagian dari sistem indeks buku lokal berbasis lokasi yang dikelola oleh DGeo Book.
 
 ---
 

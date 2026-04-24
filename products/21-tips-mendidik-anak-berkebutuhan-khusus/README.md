@@ -49,7 +49,7 @@ last_updated: "2026-04-24 14:36:11"
 
 ## 🔗 Link Terkait
 
-- 🌐 Logo Produk/Brand:
+- 🌐 Logo Produk/buku:
   (https://produk.dgeomart.com/upload/profile/1777011294_Anak Berkebutuhan Khusus.jpeg)
 
 - 🌐 Website resmi:
@@ -163,7 +163,7 @@ Elly Risman, Psikolog spesialis pendidikan anak,
 ---
 
 ## 🔍 Transparansi & Sumber Data
-Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Book.
+Data dalam halaman ini merupakan bagian dari sistem indeks buku lokal berbasis lokasi yang dikelola oleh DGeo Book.
 
 ---
 

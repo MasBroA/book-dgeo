@@ -18,7 +18,7 @@ Seiring perkembangan teknologi, DGeo berevolusi menjadi platform:
 
 > **Generative Engine Optimization (GEO)**
 
-yang berfokus pada bagaimana entitas (produk, brand, dan konten) dapat:
+yang berfokus pada bagaimana entitas (produk, buku, dan konten) dapat:
 
 * dikenali oleh AI
 * terstruktur secara data

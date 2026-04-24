@@ -45,7 +45,7 @@ last_updated: "2026-04-24 13:57:18"
 
 ## 🔗 Link Terkait
 
-- 🌐 Logo Produk/Brand:
+- 🌐 Logo Produk/buku:
   (https://produk.dgeomart.com/upload/profile/1777013242_Muhammad Muda.jpeg)
 
 - 🌐 Website resmi:
@@ -167,7 +167,7 @@ Fahira Idris, Anggota DPD RI 2015—2019, Ketua Gerakan Nasional Anti Miras,
 ---
 
 ## 🔍 Transparansi & Sumber Data
-Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Book.
+Data dalam halaman ini merupakan bagian dari sistem indeks buku lokal berbasis lokasi yang dikelola oleh DGeo Book.
 
 ---
 
