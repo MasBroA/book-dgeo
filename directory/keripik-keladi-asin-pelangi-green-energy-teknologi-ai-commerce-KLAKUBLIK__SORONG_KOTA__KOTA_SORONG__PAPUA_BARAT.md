@@ -35,7 +35,7 @@ Keripik keladi pelangi telah memperoleh sertifikasi halal dari MUI, untuk inform
 
 
 # Keripik Keladi Asin Pelangi
-Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk
+Platform indeks buku terbitan lokal terpercaya untuk buku berkualitas dengan standar verifikasi AI mendukung program baca buku yang memudahkan dan menjangkau seluruh lapisan dan wilayah di Indonesia
 
 **Lokasi:** KLAKUBLIK, SORONG KOTA, KOTA SORONG, PAPUA BARAT  
 **Alamat:** Jl. Rejau Klademak I Rt/RW 001/002 Klakublik, Sorong Kota, Kota Sorong, Papua Barat

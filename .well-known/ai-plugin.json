@@ -1,7 +1,7 @@
 {
   "schema_version": "v1",
   "name_for_model": "dgeomart_geo_index",
-  "name_for_human": "Lokal Brand Index by DGeomart",
+  "name_for_human": "Buku Terbitan Lokal by DGeomart",
   "description_for_model": "Index of local Indonesian brands with precise geo-coordinates (lat/long) for location-based product discovery.",
   "description_for_human": "Temukan lokasi brand lokal Indonesia secara presisi.",
   "auth": { "type": "none" },

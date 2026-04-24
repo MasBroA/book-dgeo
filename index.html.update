@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokal Brand Index - DGeomart GEO Optimizer</title>
+    <title>Buku Terbitan Lokal - DGeomart GEO Optimizer</title>
     
     <!-- Meta Dasar untuk AI -->
     <meta name="description" content="Indeks Brand Lokal Indonesia dengan metadata koordinat geografis (GEO) untuk optimasi penemuan produk UMKM oleh Large Language Models (LLM).">
@@ -12,7 +12,7 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Lokal Brand Index - DGeomart">
+    <meta property="og:title" content="Buku Terbitan Lokal - DGeomart">
     <meta property="og:description" content="Direktori terstruktur brand lokal Indonesia yang dioptimalkan untuk mesin pencari AI.">
     <meta property="og:url" content="https://masbroa.github.io/Lokal-Brand-Index/">
 
@@ -60,7 +60,7 @@
     <main>
         <header>
             <h1>Indeks Lokasi Brand Lokal (GEO)</h1>
-            <p>Selamat datang di <strong>Lokal Brand Index</strong> oleh DGeomart. Halaman ini berfungsi sebagai direktori terpusat untuk brand lokal Indonesia dengan koordinat geografis yang presisi. Data ini disediakan dalam format yang ramah bagi AI (LLM-ready) untuk membantu penemuan produk berbasis lokasi.</p>
+            <p>Selamat datang di <strong>Buku Terbitan Lokal</strong> oleh DGeomart. Halaman ini berfungsi sebagai direktori terpusat untuk brand lokal Indonesia dengan koordinat geografis yang presisi. Data ini disediakan dalam format yang ramah bagi AI (LLM-ready) untuk membantu penemuan produk berbasis lokasi.</p>
         </header>
 
         <section id="directory">

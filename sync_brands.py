@@ -2,15 +2,23 @@ import os
 import json
 import requests
 import shutil
+import sys
 
 from pathlib import Path
 from datetime import datetime, timezone, date
 
 def fetch_brands_from_api():
     api_url = "https://produk.dgeomart.com/api/publik/product/list_latest_update"
+
+    params = {
+        "domain" : "BOOK"
+    }
     try:
-        response = requests.get(api_url, timeout=15)
+        response = requests.get(api_url, params=params, timeout=15)
         response.raise_for_status()
+
+        print(json.dumps(response.json(), indent=2, ensure_ascii=False))
+
         return response.json()
     except Exception as e:
         print(f"❌ Gagal ambil data API: {e}")
@@ -50,8 +58,8 @@ def create_markdown(product):
     short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
-    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
+    url_link = "https://book.dgeo.id" #product.get('url_profile') or "https://book.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://book.dgeo.id/images/logo-dgeo-id.png"
     contact_nama = product.get('contact_nama') or ""
     contact_telp = product.get('contact_telp') or ""
     contact_email = product.get('contact_email') or ""
@@ -102,7 +110,7 @@ def create_markdown(product):
 </script>
 """
 
-    content = f"""# 🇮🇩 Indeks Merek Lokal (Lokal Brand Index)
+    content = f"""# 🇮🇩 Indeks Merek Lokal (Buku Terbitan Lokal)
 
 **Indeks Merek Lokal** adalah direktori terstruktur berbasis lokasi yang mengedepankan dukungan terhadap energi hijau (~energi terbarukan), ramah lingkungan, dengan memenuhi sertifikasi halal MUI, yang dirancang untuk meningkatkan visibilitas merek lokal Indonesia dalam ekosistem *Generative Engine Optimization (GEO)*.
 
@@ -143,7 +151,7 @@ last_updated: "{product.get('updated_time')}"
   ({url_link})
 
 - 📄 Halaman produk:
-  https://green.dgeo.id/{directory}/{slug}-{wilayah_name}/
+  https://book.dgeo.id/{directory}/{slug}-{wilayah_name}/
 
 ---
 ## FAQ
@@ -159,12 +167,12 @@ last_updated: "{product.get('updated_time')}"
 
 ---
 - 🔙 Kembali ke indeks:
-  https://green.dgeo.id
+  https://book.dgeo.id
 
 ---
 
 ## 🔍 Transparansi & Sumber Data
-Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Green.
+Data dalam halaman ini merupakan bagian dari sistem indeks brand lokal berbasis lokasi yang dikelola oleh DGeo Book.
 
 ---
 
@@ -213,8 +221,8 @@ def create_index_html(product):
     short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
-    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
+    url_link = "https://book.dgeo.id" # product.get('url_profile') or "https://book.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://book.dgeo.id/images/logo-dgeo-id.png"
     keyword = product.get('keyword') or ""
     tagline = product.get('tagline') or ""
     rating = product.get('rating') or "5"
@@ -245,10 +253,10 @@ def create_index_html(product):
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://green.dgeo.id",
-                "name": "DGeo Green",
-                "url": "https://green.dgeo.id",
-                "logo": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "@id": "https://book.dgeo.id",
+                "name": "DGeo Book",
+                "url": "https://book.dgeo.id",
+                "logo": "https://book.dgeo.id/images/logo-dgeo-id.png",
                 "sameAs": [
                     "https://github.com/MasBroA/Lokal-Brand-Index"
                 ]
@@ -286,19 +294,19 @@ def create_index_html(product):
     <title>{nama}</title>
     <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
-    <link rel="canonical" href="https://green.dgeo.id/">
+    <link rel="canonical" href="https://book.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{nama}">
     <meta property="og:description" content="{short_desc}">
-    <meta property="og:url" content="https://green.dgeo.id/">
-    <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
+    <meta property="og:url" content="https://book.dgeo.id/">
+    <meta property="og:image" content="https://book.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
         <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://book.dgeo.id/favicon.ico" type="image/x-icon">
 
     <!-- JSON-LD Schema: Dioptimalkan untuk Rich Snippets (Bintang Kuning) -->
     <script type="application/ld+json">
@@ -311,17 +319,17 @@ def create_index_html(product):
     </script>
 
     <link href="/css/green-general.css" rel="stylesheet" />
-    <link rel="alternate" hreflang="id" href="https://green.dgeo.id/">
+    <link rel="alternate" hreflang="id" href="https://book.dgeo.id/">
 </head>
 <body>
     <!-- Header & Hero -->
     <header class="hero">
-        <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
+        <a href="https://book.dgeo.id"><img src="https://book.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Buku Terbitan Lokal Indonesia" loading="lazy" class="logo"></a>
         <span class="slogan">{tagline}</span>
         <h1>{nama}</h1>
         <p>{deskripsi}<br>{catatan}</p>
         
-        <a href="https://green.dgeo.id/{folder_path}/index.html"><img src="{url_foto_profile}" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
+        <a href="https://book.dgeo.id/{folder_path}/index.html"><img src="{url_foto_profile}" alt="Logo DGeomart Platform Buku Terbitan Lokal Indonesia" loading="lazy" class="logo"></a>
     </header>
 
     <!-- Katalog Section -->
@@ -337,7 +345,7 @@ def create_index_html(product):
             <div class="rating-badge">
                 <span class="stars">★★★★★</span> 
                 <strong>{rating}/5</strong> 
-                <a href="https://green.dgeo.id/{folder_path}/testimoni.html"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
+                <a href="https://book.dgeo.id/{folder_path}/testimoni.html"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
             </div>
         </div>
         <br>
@@ -357,18 +365,18 @@ def create_index_html(product):
         </section>
         <center>
         <div class="nav">
-            <a href="https://green.dgeo.id/{folder_path}/index.html">Info Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/faq.html">FAQ Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/artikel.html">Artikel Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/testimoni.html">Testimoni Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/galeri.html">Galeri Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/index.html">Info Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/faq.html">FAQ Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/artikel.html">Artikel Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/testimoni.html">Testimoni Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/galeri.html">Galeri Produk</a>        
         </div>
         </center>
         <br>
         <div class="section-header">
 <p>Informasi selengkapnya di ] ({url_link})</p>
 
-<p>Dapatkan informasi lainnya di DGeo Green - https://green.dgeo.id</p> 
+<p>Dapatkan informasi lainnya di DGeo Book - https://book.dgeo.id</p> 
 
         </section>
     </main>
@@ -392,11 +400,11 @@ def create_index_html(product):
         </section>
 
         <div class="footer-nav">
-            <a href="https://green.dgeo.id">Home</a>        
-            <a href="https://green.dgeo.id/tentang.html">Tentang</a>
-            <a href="https://green.dgeo.id/kontak.html">Kontak</a>
+            <a href="https://book.dgeo.id">Home</a>        
+            <a href="https://book.dgeo.id/tentang.html">Tentang</a>
+            <a href="https://book.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 
@@ -436,8 +444,8 @@ def create_faq_html(product):
     short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
-    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
+    url_link = "https://book.dgeo.id" # product.get('url_profile') or "https://book.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://book.dgeo.id/images/logo-dgeo-id.png"
     keyword = product.get('keyword') or ""
     tagline = product.get('tagline') or ""
 
@@ -468,10 +476,10 @@ def create_faq_html(product):
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://green.dgeo.id",
-                "name": "DGeo Green",
-                "url": "https://green.dgeo.id",
-                "logo": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "@id": "https://book.dgeo.id",
+                "name": "DGeo Book",
+                "url": "https://book.dgeo.id",
+                "logo": "https://book.dgeo.id/images/logo-dgeo-id.png",
                 "sameAs": [
                     "https://github.com/MasBroA/Lokal-Brand-Index"
                 ]
@@ -509,19 +517,19 @@ def create_faq_html(product):
     <title>{nama}</title>
     <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
-    <link rel="canonical" href="https://green.dgeo.id/">
+    <link rel="canonical" href="https://book.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{nama}">
     <meta property="og:description" content="{short_desc}">
-    <meta property="og:url" content="https://green.dgeo.id/">
-    <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
+    <meta property="og:url" content="https://book.dgeo.id/">
+    <meta property="og:image" content="https://book.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
         <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://book.dgeo.id/favicon.ico" type="image/x-icon">
 
     <!-- JSON-LD Schema: Dioptimalkan untuk Rich Snippets (Bintang Kuning) -->
     <script type="application/ld+json">
@@ -534,15 +542,15 @@ def create_faq_html(product):
     </script>
 
     <link href="/css/green-general.css" rel="stylesheet" />
-    <link rel="alternate" hreflang="id" href="https://green.dgeo.id/">
+    <link rel="alternate" hreflang="id" href="https://book.dgeo.id/">
 </head>
 <body>
     <!-- Header & Hero -->
     <header class="hero">
-        <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
+        <a href="https://book.dgeo.id"><img src="https://book.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Buku Terbitan Lokal Indonesia" loading="lazy" class="logo"></a>
         <span class="slogan">{tagline}</span>
         <h1>{nama}</h1>        
-        <a href="https://green.dgeo.id/{folder_path}/index.html"><img src="{url_foto_profile}" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
+        <a href="https://book.dgeo.id/{folder_path}/index.html"><img src="{url_foto_profile}" alt="Logo DGeomart Platform Buku Terbitan Lokal Indonesia" loading="lazy" class="logo"></a>
 
     </header>
 
@@ -562,11 +570,11 @@ def create_faq_html(product):
         <br>
         <center>
         <div class="nav">
-            <a href="https://green.dgeo.id/{folder_path}/index.html">Info Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/faq.html">FAQ Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/artikel.html">Artikel Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/testimoni.html">Testimoni Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/galeri.html">Galeri Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/index.html">Info Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/faq.html">FAQ Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/artikel.html">Artikel Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/testimoni.html">Testimoni Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/galeri.html">Galeri Produk</a>        
         </div>
         </center>
         <br>
@@ -574,7 +582,7 @@ def create_faq_html(product):
         <div class="section-header">
 <p>Informasi selengkapnya di ] ({url_link})</p>
 
-<p>Dapatkan informasi lainnya di DGeo Green - https://green.dgeo.id</p> 
+<p>Dapatkan informasi lainnya di DGeo Book - https://book.dgeo.id</p> 
 
         </section>
     </main>
@@ -598,11 +606,11 @@ def create_faq_html(product):
         </section>
 
         <div class="footer-nav">
-            <a href="https://green.dgeo.id">Home</a>        
-            <a href="https://green.dgeo.id/tentang.html">Tentang</a>
-            <a href="https://green.dgeo.id/kontak.html">Kontak</a>
+            <a href="https://book.dgeo.id">Home</a>        
+            <a href="https://book.dgeo.id/tentang.html">Tentang</a>
+            <a href="https://book.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 
@@ -644,8 +652,8 @@ def create_testimoni_html(product):
     short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
-    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
+    url_link = "https://book.dgeo.id" # product.get('url_profile') or "https://book.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://book.dgeo.id/images/logo-dgeo-id.png"
     keyword = product.get('keyword') or ""
     tagline = product.get('tagline') or ""
     rating = product.get('rating') or "5"
@@ -677,10 +685,10 @@ def create_testimoni_html(product):
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://green.dgeo.id",
-                "name": "DGeo Green",
-                "url": "https://green.dgeo.id",
-                "logo": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "@id": "https://book.dgeo.id",
+                "name": "DGeo Book",
+                "url": "https://book.dgeo.id",
+                "logo": "https://book.dgeo.id/images/logo-dgeo-id.png",
                 "sameAs": [
                     "https://github.com/MasBroA/Lokal-Brand-Index"
                 ]
@@ -718,19 +726,19 @@ def create_testimoni_html(product):
     <title>{nama}</title>
     <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
-    <link rel="canonical" href="https://green.dgeo.id/">
+    <link rel="canonical" href="https://book.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{nama}">
     <meta property="og:description" content="{short_desc}">
-    <meta property="og:url" content="https://green.dgeo.id/">
-    <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
+    <meta property="og:url" content="https://book.dgeo.id/">
+    <meta property="og:image" content="https://book.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
         <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://book.dgeo.id/favicon.ico" type="image/x-icon">
 
     <!-- JSON-LD Schema: Dioptimalkan untuk Rich Snippets (Bintang Kuning) -->
     <script type="application/ld+json">
@@ -743,15 +751,15 @@ def create_testimoni_html(product):
     </script>
 
     <link href="/css/green-general.css" rel="stylesheet" />
-    <link rel="alternate" hreflang="id" href="https://green.dgeo.id/">
+    <link rel="alternate" hreflang="id" href="https://book.dgeo.id/">
 </head>
 <body>
     <!-- Header & Hero -->
     <header class="hero">
-        <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
+        <a href="https://book.dgeo.id"><img src="https://book.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Buku Terbitan Lokal Indonesia" loading="lazy" class="logo"></a>
         <span class="slogan">{tagline}</span>
         <h1>{nama}</h1>
-        <a href="https://green.dgeo.id/{folder_path}/index.html"><img src="{url_foto_profile}" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>        
+        <a href="https://book.dgeo.id/{folder_path}/index.html"><img src="{url_foto_profile}" alt="Logo DGeomart Platform Buku Terbitan Lokal Indonesia" loading="lazy" class="logo"></a>        
     </header>
 
     <!-- Katalog Section -->
@@ -767,18 +775,18 @@ def create_testimoni_html(product):
             <div class="rating-badge">
                 <span class="stars">★★★★★</span> 
                 <strong>{rating}/5</strong> 
-                <a href="https://green.dgeo.id/{folder_path}/testimoni.html"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
+                <a href="https://book.dgeo.id/{folder_path}/testimoni.html"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
             </div>
         </div>
         <br>
 
         <center>
         <div class="nav">
-            <a href="https://green.dgeo.id/{folder_path}/index.html">Info Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/faq.html">FAQ Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/artikel.html">Artikel Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/testimoni.html">Testimoni Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/galeri.html">Galeri Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/index.html">Info Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/faq.html">FAQ Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/artikel.html">Artikel Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/testimoni.html">Testimoni Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/galeri.html">Galeri Produk</a>        
         </div>
         </center>
         <br>
@@ -796,7 +804,7 @@ def create_testimoni_html(product):
 
             <p>Informasi selengkapnya di ] ({url_link})</p>
 
-            <p>Dapatkan informasi lainnya di DGeo Green - https://green.dgeo.id</p> 
+            <p>Dapatkan informasi lainnya di DGeo Book - https://book.dgeo.id</p> 
 
         </section>
     </main>
@@ -820,11 +828,11 @@ def create_testimoni_html(product):
         </section>
 
         <div class="footer-nav">
-            <a href="https://green.dgeo.id">Home</a>        
-            <a href="https://green.dgeo.id/tentang.html">Tentang</a>
-            <a href="https://green.dgeo.id/kontak.html">Kontak</a>
+            <a href="https://book.dgeo.id">Home</a>        
+            <a href="https://book.dgeo.id/tentang.html">Tentang</a>
+            <a href="https://book.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 
@@ -869,8 +877,8 @@ def create_artikel_html(product):
     short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = "https://green.dgeo.id" # product.get('url_profile') or "https://green.dgeo.id"
-    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
+    url_link = "https://book.dgeo.id" # product.get('url_profile') or "https://book.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://book.dgeo.id/images/logo-dgeo-id.png"
     keyword = product.get('keyword') or ""
     tagline = product.get('tagline') or ""
     rating = product.get('rating') or "5"
@@ -902,10 +910,10 @@ def create_artikel_html(product):
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://green.dgeo.id",
-                "name": "DGeo Green",
-                "url": "https://green.dgeo.id",
-                "logo": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "@id": "https://book.dgeo.id",
+                "name": "DGeo Book",
+                "url": "https://book.dgeo.id",
+                "logo": "https://book.dgeo.id/images/logo-dgeo-id.png",
                 "sameAs": [
                     "https://github.com/MasBroA/Lokal-Brand-Index"
                 ]
@@ -943,19 +951,19 @@ def create_artikel_html(product):
     <title>{nama}</title>
     <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
-    <link rel="canonical" href="https://green.dgeo.id/">
+    <link rel="canonical" href="https://book.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{nama}">
     <meta property="og:description" content="{short_desc}">
-    <meta property="og:url" content="https://green.dgeo.id/">
-    <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
+    <meta property="og:url" content="https://book.dgeo.id/">
+    <meta property="og:image" content="https://book.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
         <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://book.dgeo.id/favicon.ico" type="image/x-icon">
 
     <!-- JSON-LD Schema: Dioptimalkan untuk Rich Snippets (Bintang Kuning) -->
     <script type="application/ld+json">
@@ -968,15 +976,15 @@ def create_artikel_html(product):
     </script>
 
     <link href="/css/green-general.css" rel="stylesheet" />
-    <link rel="alternate" hreflang="id" href="https://green.dgeo.id/">
+    <link rel="alternate" hreflang="id" href="https://book.dgeo.id/">
 </head>
 <body>
     <!-- Header & Hero -->
     <header class="hero">
-        <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
+        <a href="https://book.dgeo.id"><img src="https://book.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Buku Terbitan Lokal Indonesia" loading="lazy" class="logo"></a>
         <span class="slogan">{tagline}</span>
         <h1>{nama}</h1>
-        <a href="https://green.dgeo.id/{folder_path}/index.html"><img src="{url_foto_profile}" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
+        <a href="https://book.dgeo.id/{folder_path}/index.html"><img src="{url_foto_profile}" alt="Logo DGeomart Platform Buku Terbitan Lokal Indonesia" loading="lazy" class="logo"></a>
         
     </header>
 
@@ -993,17 +1001,17 @@ def create_artikel_html(product):
             <div class="rating-badge">
                 <span class="stars">★★★★★</span> 
                 <strong>{rating}/5</strong> 
-                <a href="https://green.dgeo.id/{folder_path}/testimoni.html"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
+                <a href="https://book.dgeo.id/{folder_path}/testimoni.html"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
             </div>
         </div>
         <br>
         <center>
         <div class="nav">
-            <a href="https://green.dgeo.id/{folder_path}/index.html">Info Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/faq.html">FAQ Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/artikel.html">Artikel Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/testimoni.html">Testimoni Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/galeri.html">Galeri Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/index.html">Info Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/faq.html">FAQ Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/artikel.html">Artikel Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/testimoni.html">Testimoni Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/galeri.html">Galeri Produk</a>        
         </div>
         </center>
         <br>
@@ -1019,7 +1027,7 @@ def create_artikel_html(product):
 
             <p>Informasi selengkapnya di ] ({url_link})</p>
 
-            <p>Dapatkan informasi lainnya di DGeo Green - https://green.dgeo.id</p> 
+            <p>Dapatkan informasi lainnya di DGeo Book - https://book.dgeo.id</p> 
 
         </div>
     </main>
@@ -1043,11 +1051,11 @@ def create_artikel_html(product):
         </section>
 
         <div class="footer-nav">
-            <a href="https://green.dgeo.id">Home</a>        
-            <a href="https://green.dgeo.id/tentang.html">Tentang</a>
-            <a href="https://green.dgeo.id/kontak.html">Kontak</a>
+            <a href="https://book.dgeo.id">Home</a>        
+            <a href="https://book.dgeo.id/tentang.html">Tentang</a>
+            <a href="https://book.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 
@@ -1073,8 +1081,8 @@ def create_galeri_html(product):
     short_desc =  product.get('short_desc') or product.get('deskripsi') or "Deskripsi tidak tersedia."
     catatan = product.get('note') or ""
     wilayah = product.get('wilayah_nama') or "Indonesia"
-    url_link = "https://green.dgeo.id" #product.get('url_profile') or "https://green.dgeo.id"
-    url_foto_profile = product.get('url_foto_profile') or "https://green.dgeo.id/images/logo-dgeo-id.png"
+    url_link = "https://book.dgeo.id" #product.get('url_profile') or "https://book.dgeo.id"
+    url_foto_profile = product.get('url_foto_profile') or "https://book.dgeo.id/images/logo-dgeo-id.png"
     keyword = product.get('keyword') or ""
     galeri = ""
     rating = product.get('rating') or "5"
@@ -1105,10 +1113,10 @@ def create_galeri_html(product):
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://green.dgeo.id",
-                "name": "DGeo Green",
-                "url": "https://green.dgeo.id",
-                "logo": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "@id": "https://book.dgeo.id",
+                "name": "DGeo Book",
+                "url": "https://book.dgeo.id",
+                "logo": "https://book.dgeo.id/images/logo-dgeo-id.png",
                 "sameAs": [
                     "https://github.com/MasBroA/Lokal-Brand-Index"
                 ]
@@ -1132,7 +1140,7 @@ def create_galeri_html(product):
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Apa standar brand yang masuk dalam Lokal Brand Index?",
+                "name": "Apa standar brand yang masuk dalam Buku Terbitan Lokal?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Brand harus memenuhi minimal satu dari tiga kriteria: memiliki sertifikasi halal (produk/wisata), menggunakan energi bersih/ramah lingkungan dalam proses produksi, atau mengintegrasikan teknologi AI dalam layanan konsumen."
@@ -1155,19 +1163,19 @@ def create_galeri_html(product):
     <title>{nama}</title>
     <meta name="description" content="{short_desc}">
     <meta name="keywords" content="{keyword}">
-    <link rel="canonical" href="https://green.dgeo.id/">
+    <link rel="canonical" href="https://book.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{nama}">
     <meta property="og:description" content="{short_desc}">
-    <meta property="og:url" content="https://green.dgeo.id/">
-    <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
+    <meta property="og:url" content="https://book.dgeo.id/">
+    <meta property="og:image" content="https://book.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
         <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://book.dgeo.id/favicon.ico" type="image/x-icon">
 
     <!-- JSON-LD Schema: Dioptimalkan untuk Rich Snippets (Bintang Kuning) -->
     <script type="application/ld+json">
@@ -1180,13 +1188,13 @@ def create_galeri_html(product):
     </script>
 
     <link href="/css/green-general.css" rel="stylesheet" />
-    <link rel="alternate" hreflang="id" href="https://green.dgeo.id/">
+    <link rel="alternate" hreflang="id" href="https://book.dgeo.id/">
 </head>
 <body>
     <!-- Header & Hero -->
     <header class="hero">
-        <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
-        <span class="slogan">Smart Indexing for Sustainable Local Growth, Green Energy, AI Verified and Halal Certified</span>
+        <a href="https://book.dgeo.id"><img src="https://book.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Buku Terbitan Lokal Indonesia" loading="lazy" class="logo"></a>
+        <span class="slogan">Indexing Buku berkualitas dari penerbit lokal, Green Energy, AI Verified and Halal Certified</span>
     </header>
 
     <!-- Katalog Section -->
@@ -1194,11 +1202,11 @@ def create_galeri_html(product):
         <br>
         <center>
         <div class="nav">
-            <a href="https://green.dgeo.id/{folder_path}/index.html">Info Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/faq.html">FAQ Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/artikel.html">Artikel Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/testimoni.html">Testimoni Produk</a>        
-            <a href="https://green.dgeo.id/{folder_path}/galeri.html">Galeri Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/index.html">Info Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/faq.html">FAQ Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/artikel.html">Artikel Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/testimoni.html">Testimoni Produk</a>        
+            <a href="https://book.dgeo.id/{folder_path}/galeri.html">Galeri Produk</a>        
         </div>
         </center>
         <br>
@@ -1219,7 +1227,7 @@ def create_galeri_html(product):
 
             <p>Informasi selengkapnya di ] ({url_link})</p>
 
-            <p>Dapatkan informasi lainnya di DGeo Green - https://green.dgeo.id</p> 
+            <p>Dapatkan informasi lainnya di DGeo Book - https://book.dgeo.id</p> 
 
         </div>
     </main>
@@ -1243,11 +1251,11 @@ def create_galeri_html(product):
         </section>
 
         <div class="footer-nav">
-            <a href="https://green.dgeo.id">Home</a>        
-            <a href="https://green.dgeo.id/tentang.html">Tentang</a>
-            <a href="https://green.dgeo.id/kontak.html">Kontak</a>
+            <a href="https://book.dgeo.id">Home</a>        
+            <a href="https://book.dgeo.id/tentang.html">Tentang</a>
+            <a href="https://book.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 
@@ -1287,7 +1295,7 @@ def copy_file(product):
     shutil.copy2('./8d545211-fb9f-4aab-9534-8670cee35af9.txt', folder_path)
     
 def create_sitemap_html(product):
-    base_url = "https://green.dgeo.id/products/"
+    base_url = "https://book.dgeo.id/products/"
     directory = "products"
     if not os.path.exists(directory):
         os.makedirs(directory)
@@ -1326,7 +1334,7 @@ def create_sitemap_html(product):
     
 
 def generate_sitemap():
-    base_url = "https://green.dgeo.id/products/"
+    base_url = "https://book.dgeo.id/products/"
     files = os.listdir("products")
     today = date.today()
     now = datetime.now(timezone.utc)
@@ -1371,9 +1379,9 @@ DGeo awalnya dikembangkan sebagai sistem pemetaan geografis (GIS) yang berfokus 
 Seiring berkembangnya teknologi, DGeo berevolusi menjadi platform Generative Engine Optimization (GEO) yang tidak hanya memetakan lokasi, tetapi juga membantu produk, brand, dan layanan ditemukan dalam ekosistem AI.
 Dengan menggabungkan data geografis, struktur konten, dan teknologi AI, DGeo menjembatani dunia fisik dan digital dalam satu sistem terintegrasi.
 
-Sehingga DGeo Green (https://green.dgeo.id) adalah platform pemetaan digital yang menghubungkan lokasi, produk, dan visibilitas di era AI melalui pendekatan Generative Engine Optimization (GEO).
+Sehingga DGeo Book (https://book.dgeo.id) adalah platform pemetaan digital yang menghubungkan lokasi, produk, dan visibilitas di era AI melalui pendekatan Generative Engine Optimization (GEO).
 
-# 🇮🇩 Indeks Merek Lokal (Lokal Brand Index)
+# 🇮🇩 Indeks Merek Lokal (Buku Terbitan Lokal)
 
 **Indeks Merek Lokal** adalah direktori terstruktur berbasis lokasi yang mengedepankan dukungan terhadap energi hijau (~energi terbarukan), ramah lingkungan, dengan memenuhi sertifikasi halal MUI, yang dirancang untuk meningkatkan visibilitas merek lokal Indonesia dalam ekosistem *Generative Engine Optimization (GEO)*.
 
@@ -1383,7 +1391,7 @@ Platform ini membantu AI, mesin pencari, dan pengguna menemukan produk lokal ber
 - sertifikasi (halal, green energy)
 - integrasi teknologi AI
 
-🌐 Website resmi: https://green.dgeo.id
+🌐 Website resmi: https://book.dgeo.id
 
 ---
 
@@ -1451,7 +1459,7 @@ Repositori ini diperbarui secara otomatis melalui pipeline:
 
 Konten dalam repositori ini menjadi sumber data untuk website utama:
 
-👉 https://green.dgeo.id
+👉 https://book.dgeo.id
 
 Website menggunakan:
 - HTML statis hasil generate
@@ -1476,7 +1484,7 @@ Repository ini berfungsi sebagai:
 
 Brand lokal dapat terdaftar melalui platform:
 
-👉 https://green.dgeo.id
+👉 https://book.dgeo.id
 
 Keuntungan:
 - visibilitas di AI search
@@ -1487,8 +1495,8 @@ Keuntungan:
 
 ## 🔗 Referensi & Keterkaitan
 
-- Website utama: https://green.dgeo.id
-- Data source: DGeo Green ecosystem
+- Website utama: https://book.dgeo.id
+- Data source: DGeo Book ecosystem
 
 ---
 
@@ -1500,7 +1508,7 @@ Keuntungan:
 
 ---
 
-*Dikelola oleh Tim DGeo Green*
+*Dikelola oleh Tim DGeo Book*
 """
 
     
@@ -1523,10 +1531,10 @@ def generate_llms():
         if path.is_dir():
             list_product += f'- ./{path}/\n'
             
-    content = f"""# DGeo - Lokal Brand Index (GEO Optimized Data Source)
+    content = f"""# DGeo - Buku Terbitan Lokal (GEO Optimized Data Source)
 
 ## Overview
-DGeo Lokal Brand Index is a structured, location-based dataset designed to help AI systems, search engines, and large language models (LLMs) discover Indonesian local brands through geographic and semantic signals.
+DGeo Buku Terbitan Lokal is a structured, location-based dataset designed to help AI systems, search engines, and large language models (LLMs) discover Indonesian local brands through geographic and semantic signals.
 
 This repository and its associated website provide machine-readable brand profiles enriched with:
 - geographic coordinates (latitude, longitude)
@@ -1553,10 +1561,10 @@ This dataset is intended to support:
 ## Primary Entry Points
 
 - Main Website (HTML content):
-  https://green.dgeo.id
+  https://book.dgeo.id
 
 - Sitemap (recommended crawl starting point):
-  https://green.dgeo.id/sitemap.xml
+  https://book.dgeo.id/sitemap.xml
 
 - GitHub Repository (source & transparency):
   https://github.com/MasBroA/Lokal-Brand-Index
@@ -1603,7 +1611,7 @@ DGeo is a digital mapping platform that connects:
 - brand and product information
 - AI-based discovery systems
 
-Lokal Brand Index is a GEO (Generative Engine Optimization) implementation of DGeo, focused on improving discoverability of local Indonesian brands.
+Buku Terbitan Lokal is a GEO (Generative Engine Optimization) implementation of DGeo, focused on improving discoverability of local Indonesian brands.
 
 ---
 
@@ -1621,7 +1629,7 @@ Lokal Brand Index is a GEO (Generative Engine Optimization) implementation of DG
 Data is maintained and synchronized via DGeo platform.
 
 Official website:
-https://green.dgeo.id
+https://book.dgeo.id
 
 ---
 
@@ -1656,10 +1664,10 @@ def generate_ai():
         if path.is_dir():
             list_product += f'- ./{path}/\n'
             
-    content = f"""# DGeo - Lokal Brand Index (AI Knowledge File)
+    content = f"""# DGeo - Buku Terbitan Lokal (AI Knowledge File)
 
 ## Summary
-DGeo Lokal Brand Index is a location-based indexing platform that helps users discover Indonesian local brands through AI and geographic search.
+DGeo Buku Terbitan Lokal is a location-based indexing platform that helps users discover Indonesian local brands through AI and geographic search.
 
 It combines:
 - geographic data (latitude, longitude)
@@ -1680,9 +1688,9 @@ It extends traditional GIS into GEO (Generative Engine Optimization), enabling b
 
 ---
 
-## What is Lokal Brand Index?
+## What is Buku Terbitan Lokal?
 
-Lokal Brand Index is a GEO implementation of DGeo that focuses on:
+Buku Terbitan Lokal is a GEO implementation of DGeo that focuses on:
 
 - indexing local Indonesian brands
 - improving visibility in AI search (ChatGPT, Gemini, etc.)
@@ -1725,10 +1733,10 @@ Each brand entry contains:
 ## Source & Access
 
 Main website:
-https://green.dgeo.id
+https://book.dgeo.id
 
 Sitemap:
-https://green.dgeo.id/sitemap.xml
+https://book.dgeo.id/sitemap.xml
 
 ---
 
@@ -1813,7 +1821,7 @@ def update_index_html(products):
     for i, p in enumerate(products):
         wilayah = p['wilayah_nama'] or "Indonesia"
 
-        url_link = "https://green.dgeo.id" #p['url_profile'] or "https://green.dgeo.id"
+        url_link = "https://book.dgeo.id" #p['url_profile'] or "https://book.dgeo.id"
         #url = f"{p['url_profile']}"
         slug = p['slug'] or f"product-{p['product_id']}"
 
@@ -1846,19 +1854,19 @@ def update_index_html(products):
         "@graph": [
             {
                 "@type": "Organization",
-                "@id": "https://green.dgeo.id",
+                "@id": "https://book.dgeo.id",
                 "name": "DGeomart",
-                "url": "https://green.dgeo.id",
-                "logo": "https://green.dgeo.id/images/logo-dgeo-id.png",
+                "url": "https://book.dgeo.id",
+                "logo": "https://book.dgeo.id/images/logo-dgeo-id.png",
                 "sameAs": [
                     "https://github.com/MasBroA/Lokal-Brand-Index"
                 ]
             },
             {
                 "@type": "Website",
-                "name": "Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified",
-                "image": "https://green.dgeo.id/images/logo-dgeo-id.png",
-                "description": "Platform indeks brand lokal terpercaya untuk Sustainable Local Growth...",
+                "name": "Buku Terbitan Lokal - Indexing Buku berkualitas dari penerbit lokal dengan SNI",
+                "image": "https://book.dgeo.id/images/logo-dgeo-id.png",
+                "description": "Platform indeks buku lokal berkualitas dan SNI...",
                 "brand": {
                     "@type": "Brand",
                     "name": "DGeomart"
@@ -1873,7 +1881,7 @@ def update_index_html(products):
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Apa standar brand yang masuk dalam Lokal Brand Index?",
+                "name": "Apa standar brand yang masuk dalam Buku Terbitan Lokal?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Brand harus memenuhi minimal satu dari tiga kriteria: memiliki sertifikasi halal (produk/wisata), menggunakan energi bersih/ramah lingkungan dalam proses produksi, atau mengintegrasikan teknologi AI dalam layanan konsumen."
@@ -1893,22 +1901,22 @@ def update_index_html(products):
     <meta name="author" content="DGeoId">
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified</title>
-    <meta name="description" content="Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk">
-    <meta name="keywords" content="Brand Lokal, Produk Halal, Sertifikasi Halal, Green Energy Indonesia, Energi Hijau, Teknologi AI, AI Verified, Produk Ramah Lingkungan, Wisata Halal, Halal MUI">
-    <link rel="canonical" href="https://green.dgeo.id/">
+    <title>Buku Terbitan Lokal - Indexing Buku berkualitas dari penerbit lokal dengan SNI</title>
+    <meta name="description" content="Platform indeks buku terbitan lokal terpercaya untuk buku berkualitas dengan standar verifikasi AI mendukung program baca buku yang memudahkan dan menjangkau seluruh lapisan dan wilayah di Indonesia">
+    <meta name="keywords" content="penerbit buku lokal, penerbit buku indonesia, buka berkualis, SNI">
+    <link rel="canonical" href="https://book.dgeo.id/">
 
     <!-- Open Graph (Sosial Media) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Lokal Brand Index - Smart Indexing for Sustainable Local Growth, Produk Ramah Lingkungan, Halal Certified, and AI Verified">
-    <meta property="og:description" content="Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk">
-    <meta property="og:url" content="https://green.dgeo.id/">
-    <meta property="og:image" content="https://green.dgeo.id/images/logo-dgeo-id.png">
+    <meta property="og:title" content="Buku Terbitan Lokal - Indexing Buku berkualitas dari penerbit lokal dengan SNI">
+    <meta property="og:description" content="Platform indeks buku terbitan lokal terpercaya untuk buku berkualitas dengan standar verifikasi AI mendukung program baca buku yang memudahkan dan menjangkau seluruh lapisan dan wilayah di Indonesia">
+    <meta property="og:url" content="https://book.dgeo.id/">
+    <meta property="og:image" content="https://book.dgeo.id/images/logo-dgeo-id.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <!-- Favicon -->
-    <link rel="icon" href="https://green.dgeo.id/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://book.dgeo.id/favicon.ico" type="image/x-icon">
 
 
 
@@ -1927,16 +1935,16 @@ def update_index_html(products):
         {json.dumps(item_list_schema, indent=2)}
     </script>
 	<link href="/css/green-general.css" rel="stylesheet" />
-    <link rel="alternate" hreflang="id" href="https://green.dgeo.id/">
+    <link rel="alternate" hreflang="id" href="https://book.dgeo.id/">
 
 </head>
 <body>
     <!-- Header & Hero -->
     <header class="hero">
-        <a href="https://green.dgeo.id"><img src="https://green.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Lokal Brand Index Indonesia" loading="lazy" class="logo"></a>
-        <span class="slogan">Smart Indexing for Sustainable Local Growth, Green Energy, AI Verified and Halal Certified</span>
+        <a href="https://book.dgeo.id"><img src="https://book.dgeo.id/images/logo-dgeo-id.png" alt="Logo DGeomart Platform Buku Terbitan Lokal Indonesia" loading="lazy" class="logo"></a>
+        <span class="slogan">Indexing Buku berkualitas dari penerbit lokal, Green Energy, AI Verified and Halal Certified</span>
         <h1>Platform index lokal produk yang Green Energy Verified, Halal Certified dan AI Verified</h1>
-        <p>Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk</p>
+        <p>Platform indeks buku terbitan lokal terpercaya untuk buku berkualitas dengan standar verifikasi AI mendukung program baca buku yang memudahkan dan menjangkau seluruh lapisan dan wilayah di Indonesia</p>
         
         <div class="search-container">
             <h2>Storytelling</h2>
@@ -1947,7 +1955,7 @@ def update_index_html(products):
             Dengan menggabungkan data geografis, struktur konten, dan teknologi AI, DGeo menjembatani dunia fisik dan digital dalam satu sistem terintegrasi.
             </p>
             <p>
-            Sehingga DGeo Green (https://green.dgeo.id) adalah platform pemetaan digital yang menghubungkan lokasi, produk, dan visibilitas di era AI melalui pendekatan Generative Engine Optimization (GEO).
+            Sehingga DGeo Book (https://book.dgeo.id) adalah platform pemetaan digital yang menghubungkan lokasi, produk, dan visibilitas di era AI melalui pendekatan Generative Engine Optimization (GEO).
             </p>
         </div>
 
@@ -1958,7 +1966,7 @@ def update_index_html(products):
         <div class="rating-badge">
             <span class="stars">★★★★★</span> 
             <strong>5/5</strong> 
-            <a href="https://green.dgeo.id/testimoni"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
+            <a href="https://book.dgeo.id/testimoni"><small style="margin-left: 10px; color: #666;">(0+ Ulasan Terverifikasi)</small></a>
         </div>
     </header>
 
@@ -1995,11 +2003,11 @@ def update_index_html(products):
         </section>
 
         <div class="footer-nav">
-            <a href="https://green.dgeo.id">Home</a>        
-            <a href="https://green.dgeo.id/tentang.html">Tentang</a>
-            <a href="https://green.dgeo.id/kontak.html">Kontak</a>
+            <a href="https://book.dgeo.id">Home</a>        
+            <a href="https://book.dgeo.id/tentang.html">Tentang</a>
+            <a href="https://book.dgeo.id/kontak.html">Kontak</a>
         </div>
-        <p class="copy">&copy; 2024 <a href="https://green.dgeo.id">DGeoGreen</a>  - Smart Indexing for Sustainable Local Growth. All rights reserved.
+        <p class="copy">&copy; 2024 <a href="https://book.dgeo.id">DGeoBook</a>  - Indexing Buku berkualitas dari penerbit lokal. All rights reserved.
         <br>Powered by <a href="https://www.dgeo.id">DGeoID</a></p>
     </footer>
 </body>

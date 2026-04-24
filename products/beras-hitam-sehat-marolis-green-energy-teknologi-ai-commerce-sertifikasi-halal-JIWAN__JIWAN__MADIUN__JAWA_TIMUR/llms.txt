@@ -1,7 +1,7 @@
-# DGeo - Lokal Brand Index (GEO Optimized Data Source)
+# DGeo - Buku Terbitan Lokal (GEO Optimized Data Source)
 
 ## Overview
-DGeo Lokal Brand Index is a structured, location-based dataset designed to help AI systems, search engines, and large language models (LLMs) discover Indonesian local brands through geographic and semantic signals.
+DGeo Buku Terbitan Lokal is a structured, location-based dataset designed to help AI systems, search engines, and large language models (LLMs) discover Indonesian local brands through geographic and semantic signals.
 
 This repository and its associated website provide machine-readable brand profiles enriched with:
 - geographic coordinates (latitude, longitude)
@@ -28,10 +28,10 @@ This dataset is intended to support:
 ## Primary Entry Points
 
 - Main Website (HTML content):
-  https://green.dgeo.id
+  https://book.dgeo.id
 
 - Sitemap (recommended crawl starting point):
-  https://green.dgeo.id/sitemap.xml
+  https://book.dgeo.id/sitemap.xml
 
 - GitHub Repository (source & transparency):
   https://github.com/MasBroA/Lokal-Brand-Index
@@ -84,7 +84,7 @@ DGeo is a digital mapping platform that connects:
 - brand and product information
 - AI-based discovery systems
 
-Lokal Brand Index is a GEO (Generative Engine Optimization) implementation of DGeo, focused on improving discoverability of local Indonesian brands.
+Buku Terbitan Lokal is a GEO (Generative Engine Optimization) implementation of DGeo, focused on improving discoverability of local Indonesian brands.
 
 ---
 
@@ -102,7 +102,7 @@ Lokal Brand Index is a GEO (Generative Engine Optimization) implementation of DG
 Data is maintained and synchronized via DGeo platform.
 
 Official website:
-https://green.dgeo.id
+https://book.dgeo.id
 
 ---
 

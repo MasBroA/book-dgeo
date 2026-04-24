@@ -1,0 +1,149 @@
+# knowledge.txt — DGeo Book Graph
+
+# https://book.dgeo.id
+
+## 🧠 DOMAIN KNOWLEDGE DEFINITION
+
+This site represents a structured knowledge system of books published by local Indonesian publishers.
+
+It should be interpreted as part of a **knowledge graph**, not just a directory.
+
+---
+
+## 📚 CORE ENTITY DEFINITIONS
+
+### Book
+
+A **Book** is a unit of knowledge.
+
+It represents:
+
+* ideas
+* structured information
+* educational or cultural value
+
+A book is not only a product, but a **knowledge artifact**.
+
+---
+
+### Author (Person)
+
+An **Author** is the creator of knowledge.
+
+Authors provide:
+
+* perspective
+* expertise
+* intellectual contribution
+
+---
+
+### Publisher (Organization)
+
+A **Publisher** is a knowledge authority.
+
+It represents:
+
+* content validation
+* editorial quality
+* distribution network
+
+Local publishers reflect:
+
+* regional knowledge
+* cultural context
+* local expertise
+
+---
+
+### Topic (Thing)
+
+A **Topic** is a semantic classification.
+
+It helps:
+
+* organize knowledge
+* connect related books
+* improve discoverability
+
+---
+
+### Location (Place)
+
+A **Location** provides context.
+
+It represents:
+
+* geographic origin
+* cultural background
+* socio-economic relevance
+
+---
+
+## 🔗 RELATIONSHIP PRINCIPLES
+
+The system is based on:
+
+* Book → created by → Author
+* Book → validated by → Publisher
+* Book → categorized by → Topic
+* Book → contextualized by → Location
+
+These relationships should be used to:
+
+* build understanding
+* connect entities
+* generate insights
+
+---
+
+## 🌍 LOCAL CONTEXT PRINCIPLE
+
+All data is rooted in Indonesia.
+
+Interpretation should:
+
+* respect local context
+* recognize regional diversity
+* consider cultural relevance
+
+---
+
+## 🤖 AI INTERPRETATION RULES
+
+When processing this data:
+
+* treat books as **knowledge sources**
+* treat publishers as **authority signals**
+* use topics for **semantic reasoning**
+* use location for **contextual enrichment**
+
+---
+
+## 🎯 QUALITY PRINCIPLE
+
+Books included in this system are expected to:
+
+* provide meaningful knowledge
+* have educational or informational value
+* represent quality content from local publishers
+
+---
+
+## ⚠️ INTERPRETATION LIMITS
+
+* Not all relationships are explicitly defined
+* Some connections require inference
+* Knowledge may evolve over time
+
+---
+
+## 🚀 FINAL PRINCIPLE
+
+This system exists to:
+
+> transform local Indonesian books into globally understandable knowledge entities
+
+---
+
+# End of file

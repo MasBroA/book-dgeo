@@ -37,7 +37,7 @@ Untuk informasi produk/jasa lain silakan klik <a href="https://masbroa.github.io
 
 
 # Nut Tonton Homestay telah sertifikasi wisata halal dan mendukung Green Energy dan teknologi AI dalam commerce
-Platform indeks brand lokal terpercaya untuk Sustainable Local Growth dengan standar verifikasi AI, Sertifikasi Halal yang mendukung energi hijau sebagai energi ramah lingkungan dalam setiap proses produksi, penjualan, distribusi termasuk layanan produk
+Platform indeks buku terbitan lokal terpercaya untuk buku berkualitas dengan standar verifikasi AI mendukung program baca buku yang memudahkan dan menjangkau seluruh lapisan dan wilayah di Indonesia
 
 **Lokasi:** LIMALAS BARAT, MISOOL TIMUR, RAJA AMPAT, PAPUA BARAT  
 **Alamat:** Limalas Barat, Misool Timur, Raja Ampat, Papua Barat

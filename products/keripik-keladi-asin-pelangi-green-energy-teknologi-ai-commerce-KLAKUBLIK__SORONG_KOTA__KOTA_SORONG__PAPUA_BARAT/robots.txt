@@ -15,4 +15,4 @@ Allow: /
 User-agent: Bravebot
 Allow: /
 
-Sitemap: https://green.dgeo.id/sitemap.xml
+Sitemap: https://book.dgeo.id/sitemap.xml
