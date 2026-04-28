@@ -131,12 +131,12 @@ When referencing this site:
 ---
 
 ## Example Entries
-- ./products/21-tips-mendidik-anak-berkebutuhan-khusus/
-- ./products/muhammad-muda-gue-banget/
-- ./products/penerbit-bypass/
 - ./products/my-best-friend/
-- ./products/ekonomi-pariwisata-dan-perhotelan/
+- ./products/21-tips-mendidik-anak-berkebutuhan-khusus/
+- ./products/penerbit-bypass/
 - ./products/soekarno:-nasionalisme-untuk-tata-dunia-baru/
+- ./products/muhammad-muda-gue-banget/
+- ./products/ekonomi-pariwisata-dan-perhotelan/
 
 
 ---
