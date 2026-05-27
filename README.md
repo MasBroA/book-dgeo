@@ -124,9 +124,9 @@ Setiap buku disimpan dalam format Markdown dengan informasi:
 Berikut beberapa contoh profil buku yang ada:
 - ./products/penerbit-bypass/README.md
 - ./products/ekonomi-pariwisata-dan-perhotelan/README.md
-- ./products/soekarno:-nasionalisme-untuk-tata-dunia-baru/README.md
-- ./products/muhammad-muda-gue-banget/README.md
 - ./products/21-tips-mendidik-anak-berkebutuhan-khusus/README.md
+- ./products/muhammad-muda-gue-banget/README.md
+- ./products/soekarno:-nasionalisme-untuk-tata-dunia-baru/README.md
 - ./products/my-best-friend/README.md
 
 
