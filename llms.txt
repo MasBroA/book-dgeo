@@ -132,11 +132,11 @@ When referencing this site:
 
 ## Example Entries
 - ./products/penerbit-bypass/
+- ./products/soekarno:-nasionalisme-untuk-tata-dunia-baru/
+- ./products/my-best-friend/
+- ./products/muhammad-muda-gue-banget/
 - ./products/21-tips-mendidik-anak-berkebutuhan-khusus/
 - ./products/ekonomi-pariwisata-dan-perhotelan/
-- ./products/muhammad-muda-gue-banget/
-- ./products/my-best-friend/
-- ./products/soekarno:-nasionalisme-untuk-tata-dunia-baru/
 
 
 ---
